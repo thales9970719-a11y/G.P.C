@@ -1,0 +1,377 @@
+/* =========================
+   O GATO QUE DESCONFIA
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0d0d;
+    color: #e8e4dc;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(13, 13, 13, 0.92);
+    border-bottom: 1px solid #292929;
+
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+section {
+    min-height: 100vh;
+
+    padding: 130px 10% 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-bottom: 1px solid #222;
+}
+
+section h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+
+    letter-spacing: -2px;
+}
+
+section p {
+    max-width: 700px;
+
+    font-size: 1.15rem;
+
+    color: #bdb9b0;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   INÍCIO
+   ========================= */
+
+#inicio {
+    min-height: 100vh;
+
+    text-align: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #252525 0%,
+            #0d0d0d 55%
+        );
+}
+
+#inicio h2 {
+    font-size: clamp(3rem, 8vw, 7rem);
+}
+
+#inicio p {
+    max-width: 600px;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+button {
+    margin-top: 20px;
+
+    padding: 13px 28px;
+
+    background: transparent;
+
+    color: #e8e4dc;
+
+    border: 1px solid #777;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e8e4dc;
+    color: #0d0d0d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   O GATO
+   ========================= */
+
+#gato {
+    background: #111;
+}
+
+#gato h2 {
+    position: relative;
+}
+
+#gato h2::after {
+    content: "🐈";
+
+    font-size: 3rem;
+
+    margin-left: 20px;
+}
+
+
+/* =========================
+   PENSAMENTOS
+   ========================= */
+
+#pensamentos {
+    background: #0d0d0d;
+}
+
+#pensamentos p {
+    font-size: 1.5rem;
+
+    padding: 20px;
+
+    border-left: 2px solid #555;
+
+    transition: 0.3s;
+}
+
+#pensamentos p:hover {
+    padding-left: 35px;
+
+    border-left-color: #ddd;
+
+    color: #fff;
+}
+
+
+/* =========================
+   DESCONFIE
+   ========================= */
+
+#desconfie {
+    background: #111;
+}
+
+#desconfie button {
+    margin-right: 10px;
+}
+
+#resposta-gato {
+    margin-top: 30px;
+
+    font-style: italic;
+
+    color: #d0ccc3;
+}
+
+
+/* =========================
+   CADERNO
+   ========================= */
+
+#caderno {
+    background: #0f0f0f;
+}
+
+article {
+    max-width: 700px;
+
+    padding: 35px;
+
+    border: 1px solid #333;
+
+    background: #151515;
+}
+
+article h3 {
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    font-weight: normal;
+}
+
+
+/* =========================
+   O GATO OBSERVA
+   ========================= */
+
+#observa {
+    text-align: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #222 0%,
+            #080808 70%
+        );
+}
+
+#observacao {
+    font-size: 1.5rem;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   FINAL
+   ========================= */
+
+#final {
+    text-align: center;
+
+    align-items: center;
+
+    background: #080808;
+}
+
+#final h2 {
+    font-size: 4rem;
+}
+
+#final p {
+    font-size: 1.5rem;
+}
+
+#final p:last-child {
+    color: #fff;
+
+    font-size: 2rem;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #050505;
+
+    color: #666;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    section {
+        padding: 120px 7% 60px;
+    }
+
+    section h2 {
+        font-size: 3rem;
+    }
+
+    #inicio h2 {
+        font-size: 3.5rem;
+    }
+
+    #pensamentos p {
+        font-size: 1.2rem;
+    }
+
+    #desconfie button {
+        margin: 5px 0;
+    }
+}
