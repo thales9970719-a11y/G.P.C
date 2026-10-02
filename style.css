@@ -155,13 +155,11 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+button:hover, .botao:hover {
     background: #e8e4dc;
     color: #0d0d0d;
-
     transform: translateY(-2px);
 }
-
 
 /* =========================
    O GATO
