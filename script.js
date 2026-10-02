@@ -16,7 +16,7 @@ const frases = [
 ];
 
 const gato = document.createElement("div");
-
+console.log("O script está funcionando");
 gato.id = "gato-interativo";
 
 gato.innerHTML = `
