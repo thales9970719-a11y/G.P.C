@@ -90,3 +90,26 @@ document.addEventListener("click", (evento) => {
             "Você realmente gosta de clicar, hein...";
     }
 });
+function responderGato(acao) {
+    const resposta = document.getElementById("resposta-gato");
+
+    if (acao === "compartilhar") {
+        resposta.textContent =
+            "Naturalmente. Para que verificar uma informação quando podemos oferecê-la ao mundo com a segurança de quem não sabe absolutamente nada? Allá cada cual.";
+    }
+
+    if (acao === "pesquisar") {
+        resposta.textContent =
+            "Oh. Você decidiu pesquisar antes de acreditar. Que inesperado. Eu começava a suspeitar que o botão de compartilhar havia abolido a curiosidade humana.";
+    }
+
+    if (acao === "ignorar") {
+        resposta.textContent =
+            "Excelente estratégia. Se não olharmos para o problema, ele provavelmente desaparecerá por educação. Qué disparate.";
+    }
+
+    if (acao === "perguntar") {
+        resposta.textContent =
+            "Finalmente uma pergunta sensata. Não se entusiasme, porém; uma pergunta correta não transforma automaticamente você em uma pessoa criteriosa.";
+    }
+}
