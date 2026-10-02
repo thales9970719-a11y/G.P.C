@@ -21,7 +21,18 @@ gato.id = "gato-interativo";
 
 gato.innerHTML = `
     <div id="fala-gato">Você está me observando?</div>
-    <img id="gatinho" src="gato.jpg" alt="O Gato">
+
+    <div id="gato-imagem">
+        <img id="gatinho" src="gato.jpg" alt="O Gato">
+
+        <div class="olho olho-esquerdo">
+            <div class="pupila"></div>
+        </div>
+
+        <div class="olho olho-direito">
+            <div class="pupila"></div>
+        </div>
+    </div>
 `;
 document.body.appendChild(gato);
 
