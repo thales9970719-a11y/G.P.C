@@ -515,3 +515,21 @@ footer {
 
 }
 }
+.botao {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #e8e4dc;
+    color: #0d0d0d;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botao:hover {
+    background: #ffffff;
+    color: #0d0d0d;
+    transform: translateY(-2px);
+}
