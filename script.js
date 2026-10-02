@@ -21,7 +21,7 @@ gato.id = "gato-interativo";
 
 gato.innerHTML = `
     <div id="fala-gato">Você está me observando?</div>
-    <img id="gatinho" src="https://github.com/thales9970719-a11y/gatoSch-dinger/raw/refs/heads/main/IMG_20261001_163224.jpg" alt="O Gato">
+    <img id="gatinho" src="https://github.com/thales9970719-a11y/gatoSch-dinger/raw/refs/heads/main/IMG_20261001_163224.jpg" alt="O Gato" style="display:block !important; width:180px !important; height:auto !important; opacity:1 !important; visibility:visible !important;">
 `;
 document.body.appendChild(gato);
 
