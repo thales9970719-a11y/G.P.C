@@ -530,3 +530,28 @@ footer {
   transition: background-color 0.3s ease; /* Suaviza as animações */
 }
 }
+/* ===============================
+   GATO ACOMPANHA O VISITANTE
+   =============================== */
+
+#gato-interativo {
+    position: fixed !important;
+    right: 25px !important;
+    bottom: 20px !important;
+    z-index: 99999 !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+#gatinho {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+#fala-gato {
+    max-width: 230px;
+}
