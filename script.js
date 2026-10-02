@@ -20,15 +20,9 @@ const gato = document.createElement("div");
 gato.id = "gato-interativo";
 
 gato.innerHTML = `
-    <div id="fala-gato">
-        Você está me observando?
-    </div>
-
-    <div id="gatinho">
-        🐈
-    </div>
+    <div id="fala-gato">Você está me observando?</div>
+    <img id="gatinho" src="gato.jpg" alt="O Gato">
 `;
-
 document.body.appendChild(gato);
 
 
