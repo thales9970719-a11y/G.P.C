@@ -26,11 +26,12 @@ console.log("O script está funcionando");
 
 gato.id = "gato-interativo";
 
-// O gato fica preso à tela,
-// acompanhando o visitante enquanto ele rola.
+// O gato começa no canto inferior direito.
 gato.style.position = "fixed";
 gato.style.right = "25px";
 gato.style.bottom = "20px";
+gato.style.left = "auto";
+gato.style.top = "auto";
 gato.style.zIndex = "99999";
 
 gato.innerHTML = `
@@ -64,7 +65,7 @@ const fala = document.getElementById("fala-gato");
 
 
 // ===============================
-// CLICAR NO GATO
+// GATO FOGE AO SER CLICADO
 // ===============================
 
 gatinho.addEventListener("click", () => {
@@ -74,11 +75,44 @@ gatinho.addEventListener("click", () => {
 
     fala.textContent = frase;
 
+    // Remove a animação anterior.
     gatinho.classList.remove("pulando");
 
+    // Faz a animação poder acontecer novamente.
     void gatinho.offsetWidth;
 
     gatinho.classList.add("pulando");
+
+
+    // ===============================
+    // NOVA POSIÇÃO
+    // ===============================
+
+    const margem = 20;
+
+    const larguraGato = gato.offsetWidth;
+    const alturaGato = gato.offsetHeight;
+
+    const larguraDisponivel =
+        window.innerWidth - larguraGato - margem * 2;
+
+    const alturaDisponivel =
+        window.innerHeight - alturaGato - margem * 2;
+
+    const novaPosicaoX =
+        Math.random() * larguraDisponivel + margem;
+
+    const novaPosicaoY =
+        Math.random() * alturaDisponivel + margem;
+
+
+    // Para de usar right/bottom.
+    gato.style.right = "auto";
+    gato.style.bottom = "auto";
+
+    // Coloca o gato em um lugar aleatório.
+    gato.style.left = novaPosicaoX + "px";
+    gato.style.top = novaPosicaoY + "px";
 });
 
 
