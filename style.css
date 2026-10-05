@@ -155,11 +155,13 @@ button {
     transition: 0.3s;
 }
 
-button:hover, .botao:hover {
+button:hover,
+.botao:hover {
     background: #e8e4dc;
     color: #0d0d0d;
     transform: translateY(-2px);
 }
+
 
 /* =========================
    O GATO
@@ -327,66 +329,17 @@ footer {
 }
 
 
-/* =========================
-   CELULAR
-   ========================= */
-
-@media (max-width: 700px) {
-
-    header {
-        flex-direction: column;
-
-        gap: 10px;
-
-        padding: 15px;
-    }
-
-    nav {
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 0.75rem;
-    }
-
-    section {
-        padding: 120px 7% 60px;
-    }
-
-    section h2 {
-        font-size: 3rem;
-    }
-
-    #inicio h2 {
-        font-size: 3.5rem;
-    }
-
-    #pensamentos p {
-        font-size: 1.2rem;
-    }
-
-    #desconfie button {
-        margin: 5px 0;
-    }
-
-
-   /* ===============================
+/* ===============================
    GATINHO INTERATIVO
    =============================== */
 
 #gato-interativo {
     position: fixed;
 
-    right: 25px;
-    bottom: 20px;
-
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -397,7 +350,9 @@ footer {
 }
 
 
-/* Balão */
+/* ===============================
+   BALÃO
+   =============================== */
 
 #fala-gato {
     max-width: 230px;
@@ -424,11 +379,16 @@ footer {
 }
 
 
-/* Gatinho */
+/* ===============================
+   GATINHO
+   =============================== */
 
 #gatinho {
     width: 180px;
+
     height: auto;
+
+    display: block;
 
     cursor: pointer;
 
@@ -444,14 +404,18 @@ footer {
 }
 
 
-/* Pulo */
+/* ===============================
+   PULO
+   =============================== */
 
 #gatinho.pulando {
     animation: pulo 0.5s ease;
 }
 
 
-/* Animações */
+/* ===============================
+   ANIMAÇÕES
+   =============================== */
 
 @keyframes respirar {
 
@@ -496,62 +460,95 @@ footer {
 }
 
 
-/* Celular */
+/* ===============================
+   BOTÃO ENTRAR
+   =============================== */
+
+.botao {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    background: #e8e4dc;
+
+    color: #0d0d0d;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.botao:hover {
+    background: #ffffff;
+
+    color: #0d0d0d;
+
+    transform: translateY(-2px);
+}
+
+
+/* ===============================
+   CELULAR
+   =============================== */
 
 @media (max-width: 700px) {
 
-    #gato-interativo {
-        right: 10px;
-        bottom: 10px;
+    header {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    section {
+        padding: 120px 7% 60px;
+    }
+
+    section h2 {
+        font-size: 3rem;
+    }
+
+    #inicio h2 {
+        font-size: 3.5rem;
+    }
+
+    #pensamentos p {
+        font-size: 1.2rem;
+    }
+
+    #desconfie button {
+        margin: 5px 0;
     }
 
     #fala-gato {
         max-width: 180px;
+
         font-size: 0.75rem;
     }
 
     #gatinho {
-        font-size: 3rem;
+        width: 140px;
     }
 
-
-}
-
-
-   
-.botao {
-  background-color: #007bff; /* Cor de fundo */
-  color: #ffffff;            /* Cor do texto */
-  padding: 12px 24px;        /* Espaçamento interno */
-  font-size: 16px;           /* Tamanho da fonte */
-  border: none;              /* Remove a borda padrão */
-  border-radius: 8px;        /* Arredonda os cantos */
-  cursor: pointer;           /* Muda o cursor para uma mãozinha */
-  transition: background-color 0.3s ease; /* Suaviza as animações */
-}
-}
-/* ===============================
-   GATO ACOMPANHA O VISITANTE
-   =============================== */
-
-#gato-interativo {
-    position: fixed !important;
-    right: 25px !important;
-    bottom: 20px !important;
-    z-index: 99999 !important;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-#gatinho {
-    width: 180px;
-    height: auto;
-    display: block;
-}
-
-#fala-gato {
-    max-width: 230px;
 }
