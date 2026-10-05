@@ -26,12 +26,12 @@ console.log("O script está funcionando");
 
 gato.id = "gato-interativo";
 
-// O gato começa no canto inferior direito.
+// O gato usa SOMENTE left e top.
 gato.style.position = "fixed";
-gato.style.right = "25px";
-gato.style.bottom = "20px";
-gato.style.left = "auto";
-gato.style.top = "auto";
+gato.style.left = "calc(100vw - 225px)";
+gato.style.top = "calc(100vh - 230px)";
+gato.style.right = "auto";
+gato.style.bottom = "auto";
 gato.style.zIndex = "99999";
 
 gato.innerHTML = `
@@ -75,10 +75,13 @@ gatinho.addEventListener("click", () => {
 
     fala.textContent = frase;
 
-    // Remove a animação anterior.
+
+    // ===============================
+    // ANIMAÇÃO
+    // ===============================
+
     gatinho.classList.remove("pulando");
 
-    // Faz a animação poder acontecer novamente.
     void gatinho.offsetWidth;
 
     gatinho.classList.add("pulando");
@@ -90,29 +93,61 @@ gatinho.addEventListener("click", () => {
 
     const margem = 20;
 
-    const larguraGato = gato.offsetWidth;
-    const alturaGato = gato.offsetHeight;
+    const largura = gato.offsetWidth;
+    const altura = gato.offsetHeight;
 
-    const larguraDisponivel =
-        window.innerWidth - larguraGato - margem * 2;
+    const maxX =
+        window.innerWidth - largura - margem;
 
-    const alturaDisponivel =
-        window.innerHeight - alturaGato - margem * 2;
+    const maxY =
+        window.innerHeight - altura - margem;
 
     const novaPosicaoX =
-        Math.random() * larguraDisponivel + margem;
+        Math.max(
+            margem,
+            Math.random() * maxX
+        );
 
     const novaPosicaoY =
-        Math.random() * alturaDisponivel + margem;
+        Math.max(
+            margem,
+            Math.random() * maxY
+        );
 
 
-    // Para de usar right/bottom.
-    gato.style.right = "auto";
-    gato.style.bottom = "auto";
+    // ===============================
+    // MOVER O GATO
+    // ===============================
 
-    // Coloca o gato em um lugar aleatório.
-    gato.style.left = novaPosicaoX + "px";
-    gato.style.top = novaPosicaoY + "px";
+    gato.style.setProperty(
+        "left",
+        novaPosicaoX + "px",
+        "important"
+    );
+
+    gato.style.setProperty(
+        "top",
+        novaPosicaoY + "px",
+        "important"
+    );
+
+    gato.style.setProperty(
+        "right",
+        "auto",
+        "important"
+    );
+
+    gato.style.setProperty(
+        "bottom",
+        "auto",
+        "important"
+    );
+
+    console.log(
+        "O gato fugiu para:",
+        novaPosicaoX,
+        novaPosicaoY
+    );
 });
 
 
