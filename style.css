@@ -1,554 +1,167 @@
-/* =========================
-   O GATO QUE DESCONFIA
-   ========================= */
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-html {
-    scroll-behavior: smooth;
-}
+    <title>O Gato que Desconfia</title>
 
-body {
-    background: #0d0d0d;
-    color: #e8e4dc;
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.7;
-}
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
 
-/* =========================
-   CABEÇALHO
-   ========================= */
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>O Gato que Desconfia</h1>
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+        <nav>
+            <a href="#gato">O Gato</a>
+            <a href="#pensamentos">Pensamentos</a>
+            <a href="#desconfie">Desconfie</a>
+            <a href="#caderno">Caderno</a>
+        </nav>
+    </header>
 
-    padding: 20px 7%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    <!-- PÁGINA INICIAL -->
+    <main>
 
-    background: rgba(13, 13, 13, 0.92);
-    border-bottom: 1px solid #292929;
+        <section id="inicio">
+            <h2>Por que você acredita nisso?</h2>
 
-    z-index: 1000;
-}
+            <p>
+                Há um gato observando.
+                Ele não sabe todas as respostas.
+                Talvez seja justamente por isso que ele faça tantas perguntas.
+            </p>
 
-header h1 {
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    font-weight: normal;
-}
+            <a href="#gato" class="botao">ENTRAR?</a>
+        </section>
 
-nav {
-    display: flex;
-    gap: 25px;
-}
 
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.9rem;
+        <!-- O GATO -->
+        <section id="gato">
+            <h2>O Gato</h2>
 
-    transition: 0.3s;
-}
+            <p>
+                Ele observa antes de acreditar.
+                Desconfia antes de repetir.
+                E pergunta aquilo que ninguém parece querer perguntar.
+            </p>
 
-nav a:hover {
-    color: #ffffff;
-}
+            <p>
+                Mas talvez ele não esteja aqui para ensinar alguma coisa.
+                Talvez esteja aqui apenas para fazer você pensar.
+            </p>
+        </section>
 
 
-/* =========================
-   SEÇÕES
-   ========================= */
+        <!-- PENSAMENTOS -->
+        <section id="pensamentos">
+            <h2>Pensamentos</h2>
 
-section {
-    min-height: 100vh;
+            <p>Você acredita nisso porque pesquisou?</p>
 
-    padding: 130px 10% 80px;
+            <p>Ou porque todo mundo acredita?</p>
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+            <p>Se todo mundo concorda, isso torna uma ideia verdadeira?</p>
 
-    border-bottom: 1px solid #222;
-}
+            <p>Quem ganha quando você acredita?</p>
+        </section>
 
-section h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
 
-    font-weight: normal;
+        <!-- DESCONFIE -->
+        <section id="desconfie">
+            <h2>Desconfie</h2>
 
-    margin-bottom: 30px;
+            <p>
+                Você recebeu uma notícia na internet.
+            </p>
 
-    letter-spacing: -2px;
-}
+            <button onclick="responderGato('compartilhar')">
+                Compartilhar
+            </button>
 
-section p {
-    max-width: 700px;
+            <button onclick="responderGato('pesquisar')">
+                Pesquisar
+            </button>
 
-    font-size: 1.15rem;
+            <button onclick="responderGato('ignorar')">
+                Ignorar
+            </button>
 
-    color: #bdb9b0;
+            <button onclick="responderGato('perguntar')">
+                Perguntar quem publicou
+            </button>
 
-    margin-bottom: 20px;
-}
+            <p id="resposta-gato"></p>
+        </section>
 
 
-/* =========================
-   INÍCIO
-   ========================= */
+        <!-- CADERNO -->
+        <section id="caderno">
+            <h2>Caderno do Gato</h2>
 
-#inicio {
-    min-height: 100vh;
+            <a href="caderno.html" class="entrada-caderno">
 
-    text-align: center;
+                <span class="data-caderno">
+                    CADERNO
+                </span>
 
-    align-items: center;
+                <h3>
+                    O Gato e o Pensamento Crítico
+                </h3>
 
-    background:
-        radial-gradient(
-            circle at center,
-            #252525 0%,
-            #0d0d0d 55%
-        );
-}
+                <p>
+                    Uma pequena história sobre rotina, liberdade
+                    e o inconveniente de pensar.
+                </p>
 
-#inicio h2 {
-    font-size: clamp(3rem, 8vw, 7rem);
-}
+                <span class="ler-caderno">
+                    Ler entrada →
+                </span>
 
-#inicio p {
-    max-width: 600px;
-}
+            </a>
+        </section>
 
 
-/* =========================
-   BOTÕES
-   ========================= */
+        <!-- O GATO OBSERVA -->
+        <section id="observa">
+            <h2>O Gato Observa Você</h2>
 
-button {
-    margin-top: 20px;
+            <p id="observacao">
+                O gato está olhando.
+            </p>
+        </section>
 
-    padding: 13px 28px;
 
-    background: transparent;
+        <!-- FINAL -->
+        <section id="final">
+            <h2>Então...</h2>
 
-    color: #e8e4dc;
+            <p>
+                Eu não queria que você acreditasse em mim.
+            </p>
 
-    border: 1px solid #777;
+            <p>
+                Só queria que você perguntasse o porquê.
+            </p>
+        </section>
 
-    font-family: inherit;
+    </main>
 
-    font-size: 1rem;
 
-    cursor: pointer;
+    <!-- RODAPÉ -->
+    <footer>
+        <p>O Gato que Desconfia © 2026</p>
+    </footer>
 
-    transition: 0.3s;
-}
 
-button:hover,
-.botao:hover {
-    background: #e8e4dc;
-    color: #0d0d0d;
-    transform: translateY(-2px);
-}
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
+</body>
 
-/* =========================
-   O GATO
-   ========================= */
-
-#gato {
-    background: #111;
-}
-
-#gato h2 {
-    position: relative;
-}
-
-#gato h2::after {
-    content: "🐈";
-
-    font-size: 3rem;
-
-    margin-left: 20px;
-}
-
-
-/* =========================
-   PENSAMENTOS
-   ========================= */
-
-#pensamentos {
-    background: #0d0d0d;
-}
-
-#pensamentos p {
-    font-size: 1.5rem;
-
-    padding: 20px;
-
-    border-left: 2px solid #555;
-
-    transition: 0.3s;
-}
-
-#pensamentos p:hover {
-    padding-left: 35px;
-
-    border-left-color: #ddd;
-
-    color: #fff;
-}
-
-
-/* =========================
-   DESCONFIE
-   ========================= */
-
-#desconfie {
-    background: #111;
-}
-
-#desconfie button {
-    margin-right: 10px;
-}
-
-#resposta-gato {
-    margin-top: 30px;
-
-    font-style: italic;
-
-    color: #d0ccc3;
-}
-
-
-/* =========================
-   CADERNO
-   ========================= */
-
-#caderno {
-    background: #0f0f0f;
-}
-
-article {
-    max-width: 700px;
-
-    padding: 35px;
-
-    border: 1px solid #333;
-
-    background: #151515;
-}
-
-article h3 {
-    font-size: 2rem;
-
-    margin-bottom: 20px;
-
-    font-weight: normal;
-}
-
-
-/* =========================
-   O GATO OBSERVA
-   ========================= */
-
-#observa {
-    text-align: center;
-
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle,
-            #222 0%,
-            #080808 70%
-        );
-}
-
-#observacao {
-    font-size: 1.5rem;
-
-    font-style: italic;
-}
-
-
-/* =========================
-   FINAL
-   ========================= */
-
-#final {
-    text-align: center;
-
-    align-items: center;
-
-    background: #080808;
-}
-
-#final h2 {
-    font-size: 4rem;
-}
-
-#final p {
-    font-size: 1.5rem;
-}
-
-#final p:last-child {
-    color: #fff;
-
-    font-size: 2rem;
-
-    margin-top: 20px;
-}
-
-
-/* =========================
-   RODAPÉ
-   ========================= */
-
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    background: #050505;
-
-    color: #666;
-
-    font-size: 0.8rem;
-}
-
-
-/* ===============================
-   GATINHO INTERATIVO
-   =============================== */
-
-#gato-interativo {
-    position: fixed;
-
-    z-index: 99999;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 8px;
-
-    user-select: none;
-}
-
-
-/* ===============================
-   BALÃO
-   =============================== */
-
-#fala-gato {
-    max-width: 230px;
-
-    padding: 12px 16px;
-
-    background: #181818;
-
-    border: 1px solid #555;
-
-    border-radius: 12px;
-
-    color: #e8e4dc;
-
-    font-family: Georgia, serif;
-
-    font-size: 0.9rem;
-
-    text-align: center;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-
-    animation: aparecer 0.4s ease;
-}
-
-
-/* ===============================
-   GATINHO
-   =============================== */
-
-#gatinho {
-    width: 180px;
-
-    height: auto;
-
-    display: block;
-
-    cursor: pointer;
-
-    filter: grayscale(100%);
-
-    transition: transform 0.2s ease;
-
-    animation: respirar 3s ease-in-out infinite;
-}
-
-#gatinho:hover {
-    transform: scale(1.15);
-}
-
-
-/* ===============================
-   PULO
-   =============================== */
-
-#gatinho.pulando {
-    animation: pulo 0.5s ease;
-}
-
-
-/* ===============================
-   ANIMAÇÕES
-   =============================== */
-
-@keyframes respirar {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-
-}
-
-@keyframes pulo {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-}
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* ===============================
-   BOTÃO ENTRAR
-   =============================== */
-
-.botao {
-    display: inline-block;
-
-    padding: 12px 28px;
-
-    background: #e8e4dc;
-
-    color: #0d0d0d;
-
-    text-decoration: none;
-
-    border-radius: 4px;
-
-    font-family: Georgia, serif;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.botao:hover {
-    background: #ffffff;
-
-    color: #0d0d0d;
-
-    transform: translateY(-2px);
-}
-
-
-/* ===============================
-   CELULAR
-   =============================== */
-
-@media (max-width: 700px) {
-
-    header {
-        flex-direction: column;
-
-        gap: 10px;
-
-        padding: 15px;
-    }
-
-    nav {
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 0.75rem;
-    }
-
-    section {
-        padding: 120px 7% 60px;
-    }
-
-    section h2 {
-        font-size: 3rem;
-    }
-
-    #inicio h2 {
-        font-size: 3.5rem;
-    }
-
-    #pensamentos p {
-        font-size: 1.2rem;
-    }
-
-    #desconfie button {
-        margin: 5px 0;
-    }
-
-    #fala-gato {
-        max-width: 180px;
-
-        font-size: 0.75rem;
-    }
-
-    #gatinho {
-        width: 140px;
-    }
-
-}
+</html>
