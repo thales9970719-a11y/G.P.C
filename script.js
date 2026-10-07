@@ -197,6 +197,68 @@ document.addEventListener("click", (evento) => {
 
 
 // ===============================
+// O GATO OBSERVA VOCÊ
+// ===============================
+
+const observacao = document.getElementById("observacao");
+
+const observacoes = {
+    inicio:
+        "Você chegou. Ainda não sabe exatamente o que está fazendo aqui.",
+
+    gato:
+        "Você veio conhecer o gato. Ele já tinha reparado em você.",
+
+    pensamentos:
+        "Você está lendo as perguntas. Interessante. Eu não vou respondê-las.",
+
+    desconfie:
+        "Você chegou até aqui. Agora precisa decidir se acredita no que está vendo.",
+
+    caderno:
+        "Então você lê. Eu começava a suspeitar disso.",
+
+    observa:
+        "Você chegou à parte em que eu deveria observar você. Conveniente, não?",
+
+    final:
+        "Você chegou ao fim. Ou pelo menos ao fim que eu preparei."
+};
+
+
+// ===============================
+// OBSERVAR A SEÇÃO ATUAL
+// ===============================
+
+const secoes = document.querySelectorAll("main section");
+
+const observador = new IntersectionObserver(
+    (entradas) => {
+
+        entradas.forEach((entrada) => {
+
+            if (entrada.isIntersecting) {
+
+                const id = entrada.target.id;
+
+                if (observacoes[id]) {
+                    observacao.textContent = observacoes[id];
+                }
+            }
+        });
+
+    },
+    {
+        threshold: 0.55
+    }
+);
+
+secoes.forEach((secao) => {
+    observador.observe(secao);
+});
+
+
+// ===============================
 // RESPOSTAS DO GATO
 // ===============================
 
