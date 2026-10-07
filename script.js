@@ -8,7 +8,7 @@ const frases = [
     "Você leu isso ou apenas olhou?",
 
     "Você clicou. Naturalmente, isso resolveu tudo.",
-    "Ah, a maioria pensa assim. Desde logo, um argumento irrefutável.",
+    "Ah, a maioria pensa assim. Desde luego, um argumento irrefutável.",
     "Você poderia pesquisar. Mas suponho que confiar seja mais confortável.",
 
     "Não confie em mim. Eu também desconfio de mim.",
@@ -232,6 +232,8 @@ const observacoes = {
 
 const secoes = document.querySelectorAll("main section");
 
+let finalVisitado = false;
+
 const observador = new IntersectionObserver(
     (entradas) => {
 
@@ -243,6 +245,18 @@ const observador = new IntersectionObserver(
 
                 if (observacoes[id]) {
                     observacao.textContent = observacoes[id];
+                }
+
+                // ===============================
+                // ÚLTIMA PERGUNTA
+                // ===============================
+
+                if (id === "final" && !finalVisitado) {
+
+                    finalVisitado = true;
+
+                    fala.textContent =
+                        "E agora você está perguntando por quê?";
                 }
             }
         });
