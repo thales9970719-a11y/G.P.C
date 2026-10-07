@@ -36,14 +36,16 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(13, 13, 13, 0.92);
+    background: rgba(13, 13, 13, 0.94);
     border-bottom: 1px solid #292929;
 
     z-index: 1000;
+
+    backdrop-filter: blur(6px);
 }
 
 header h1 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     letter-spacing: 2px;
     font-weight: normal;
 }
@@ -54,15 +56,37 @@ nav {
 }
 
 nav a {
-    color: #aaa;
+    position: relative;
+
+    color: #999;
     text-decoration: none;
     font-size: 0.9rem;
 
-    transition: 0.3s;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: #e8e4dc;
+
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: #ffffff;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 
@@ -90,6 +114,8 @@ section h2 {
     margin-bottom: 30px;
 
     letter-spacing: -2px;
+
+    line-height: 1.05;
 }
 
 section p {
@@ -117,17 +143,28 @@ section p {
     background:
         radial-gradient(
             circle at center,
-            #252525 0%,
-            #0d0d0d 55%
+            #292929 0%,
+            #151515 30%,
+            #0d0d0d 65%
         );
 }
 
 #inicio h2 {
+    max-width: 1000px;
+
     font-size: clamp(3rem, 8vw, 7rem);
+
+    letter-spacing: -4px;
+
+    line-height: 0.95;
 }
 
 #inicio p {
     max-width: 600px;
+
+    margin-top: 30px;
+
+    color: #aaa;
 }
 
 
@@ -152,13 +189,18 @@ button {
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 button:hover,
 .botao:hover {
     background: #e8e4dc;
     color: #0d0d0d;
+    border-color: #e8e4dc;
     transform: translateY(-2px);
 }
 
@@ -168,7 +210,13 @@ button:hover,
    ========================= */
 
 #gato {
-    background: #111;
+    background:
+        linear-gradient(
+            120deg,
+            #111 0%,
+            #111 60%,
+            #0e0e0e 100%
+        );
 }
 
 #gato h2 {
@@ -178,9 +226,25 @@ button:hover,
 #gato h2::after {
     content: "🐈";
 
+    display: inline-block;
+
     font-size: 3rem;
 
     margin-left: 20px;
+
+    opacity: 0.75;
+}
+
+#gato p {
+    max-width: 650px;
+}
+
+#gato p:last-child {
+    margin-top: 10px;
+
+    color: #8f8b84;
+
+    font-style: italic;
 }
 
 
@@ -190,24 +254,47 @@ button:hover,
 
 #pensamentos {
     background: #0d0d0d;
+
+    align-items: flex-start;
+}
+
+#pensamentos h2 {
+    margin-bottom: 50px;
 }
 
 #pensamentos p {
-    font-size: 1.5rem;
+    width: min(850px, 100%);
 
-    padding: 20px;
+    font-size: clamp(1.25rem, 2.2vw, 1.55rem);
 
-    border-left: 2px solid #555;
+    padding: 22px 25px;
 
-    transition: 0.3s;
+    margin-bottom: 8px;
+
+    border-left: 1px solid #444;
+
+    color: #bdb9b0;
+
+    transition:
+        padding-left 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
 #pensamentos p:hover {
-    padding-left: 35px;
+    padding-left: 40px;
 
     border-left-color: #ddd;
 
     color: #fff;
+}
+
+#pensamentos p:last-child {
+    margin-top: 25px;
+
+    color: #e8e4dc;
+
+    font-style: italic;
 }
 
 
@@ -219,12 +306,26 @@ button:hover,
     background: #111;
 }
 
+#desconfie > p:first-of-type {
+    color: #8f8b84;
+
+    font-style: italic;
+}
+
 #desconfie button {
     margin-right: 10px;
+
+    margin-bottom: 5px;
 }
 
 #resposta-gato {
-    margin-top: 30px;
+    max-width: 750px;
+
+    margin-top: 35px;
+
+    padding-left: 20px;
+
+    border-left: 1px solid #555;
 
     font-style: italic;
 
@@ -268,17 +369,25 @@ article h3 {
 
     max-width: 700px;
 
-    padding: 35px;
+    padding: 40px;
 
     border: 1px solid #333;
 
-    background: #151515;
+    background:
+        linear-gradient(
+            135deg,
+            #171717,
+            #121212
+        );
 
     color: #e8e4dc;
 
     text-decoration: none;
 
-    transition: 0.3s ease;
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .entrada-caderno:hover {
@@ -286,13 +395,13 @@ article h3 {
 
     background: #191919;
 
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 .data-caderno {
     display: block;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
     color: #777;
 
@@ -307,6 +416,8 @@ article h3 {
     font-size: 2rem;
 
     font-weight: normal;
+
+    line-height: 1.2;
 }
 
 .entrada-caderno p {
@@ -321,6 +432,8 @@ article h3 {
     color: #e8e4dc;
 
     font-size: 0.9rem;
+
+    letter-spacing: 0.5px;
 }
 
 
@@ -352,7 +465,7 @@ article h3 {
 
     font-size: 0.9rem;
 
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .voltar-caderno:hover {
@@ -364,7 +477,7 @@ article h3 {
 
     margin: 0 auto;
 
-    padding: 50px 8%;
+    padding: 55px 8%;
 
     border: 1px solid #292929;
 
@@ -378,7 +491,9 @@ article h3 {
 
     font-weight: normal;
 
-    line-height: 1.1;
+    line-height: 1.05;
+
+    letter-spacing: -2px;
 }
 
 .subtitulo-caderno {
@@ -441,10 +556,20 @@ article h3 {
         );
 }
 
+#observa h2 {
+    max-width: 800px;
+}
+
 #observacao {
+    max-width: 650px;
+
     font-size: 1.5rem;
 
     font-style: italic;
+
+    color: #c5c1b9;
+
+    transition: opacity 0.3s ease;
 }
 
 
@@ -457,21 +582,32 @@ article h3 {
 
     align-items: center;
 
-    background: #080808;
+    background:
+        radial-gradient(
+            circle at center,
+            #171717 0%,
+            #080808 65%
+        );
 }
 
 #final h2 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 7vw, 5rem);
+
+    letter-spacing: -3px;
 }
 
 #final p {
     font-size: 1.5rem;
+
+    color: #999;
 }
 
 #final p:last-child {
+    max-width: 700px;
+
     color: #fff;
 
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 
     margin-top: 20px;
 }
@@ -696,10 +832,22 @@ footer {
 
     #inicio h2 {
         font-size: 3.5rem;
+
+        letter-spacing: -2px;
+    }
+
+    #inicio p {
+        font-size: 1rem;
     }
 
     #pensamentos p {
         font-size: 1.2rem;
+
+        padding: 18px;
+    }
+
+    #pensamentos p:hover {
+        padding-left: 25px;
     }
 
     #desconfie button {
@@ -714,6 +862,16 @@ footer {
 
     #gatinho {
         width: 140px;
+    }
+
+    #gato h2::after {
+        font-size: 2.3rem;
+
+        margin-left: 10px;
+    }
+
+    #final h2 {
+        font-size: 3.5rem;
     }
 
 }
@@ -739,6 +897,10 @@ footer {
 
     .poema {
         font-size: 1.05rem;
+    }
+
+    .entrada-caderno {
+        padding: 30px 25px;
     }
 
 }
