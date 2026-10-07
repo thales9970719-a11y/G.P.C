@@ -3,16 +3,23 @@
 // ===============================
 
 const frases = [
-    "Você está me observando ou eu estou observando você?",
-    "Por que você acredita nisso?",
-    "Interessante... você clicou.",
-    "Eu não tenho certeza de nada.",
-    "Talvez a pergunta seja mais importante que a resposta.",
-    "Você leu tudo mesmo?",
-    "Desconfie até de mim.",
-    "Miau.",
-    "Quem colocou essa informação aí?",
-    "Você voltou. Eu percebi."
+    "Você está me observando. Eu também.",
+    "Interessante. Você parou aqui.",
+    "Você leu isso ou apenas olhou?",
+
+    "Você clicou. Naturalmente, isso resolveu tudo.",
+    "Ah, a maioria pensa assim. Desde logo, um argumento irrefutável.",
+    "Você poderia pesquisar. Mas suponho que confiar seja mais confortável.",
+
+    "Não confie em mim. Eu também desconfio de mim.",
+    "Eu posso estar errado. É uma possibilidade bastante inconveniente.",
+    "Não sei. E prefiro isso a inventar.",
+
+    "Eu tinha uma observação importante. Depois vi um passarinho.",
+    "A propósito, você tem comida?",
+    "Miau. Às vezes é o argumento mais honesto.",
+
+    "Cuidado. Você está acreditando em um gato."
 ];
 
 
@@ -36,7 +43,7 @@ gato.style.zIndex = "99999";
 
 gato.innerHTML = `
     <div id="fala-gato">
-        Você está me observando?
+        Você está me observando. Eu também.
     </div>
 
     <img
@@ -201,13 +208,13 @@ function responderGato(acao) {
     if (acao === "compartilhar") {
 
         resposta.textContent =
-            "Naturalmente. Para que verificar uma informação quando podemos oferecê-la ao mundo com a segurança de quem não sabe absolutamente nada? Allá cada cual.";
+            "Você poderia pesquisar antes. Mas suponho que confiar seja mais confortável. Allá cada cual.";
     }
 
     if (acao === "pesquisar") {
 
         resposta.textContent =
-            "Oh. Você decidiu pesquisar antes de acreditar. Que inesperado. Eu começava a suspeitar que o botão de compartilhar havia abolido a curiosidade humana.";
+            "Oh. Você decidiu pesquisar antes de acreditar. Que inesperado. Eu começava a suspeitar que a curiosidade humana ainda estivesse viva.";
     }
 
     if (acao === "ignorar") {
