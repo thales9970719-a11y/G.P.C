@@ -107,12 +107,28 @@
                 Você recebeu uma notícia na internet.
             </p>
 
-            <p>
-                <strong>
-                    “Cientistas descobriram que ouvir música triste
-                    antes de uma prova aumenta a inteligência.”
-                </strong>
-            </p>
+            <div id="noticia-falsa">
+
+                <span class="etiqueta-noticia">
+                    SIMULAÇÃO
+                </span>
+
+                <h3 id="titulo-noticia">
+                    Cientistas descobrem que ouvir música triste
+                    antes da prova aumenta a inteligência
+                </h3>
+
+                <p id="texto-noticia">
+                    Pesquisadores afirmam que estudantes que escutam
+                    músicas melancólicas antes de uma prova apresentam
+                    um desempenho intelectual significativamente maior.
+                </p>
+
+                <p id="fonte-noticia">
+                    Instituto Nacional de Estudos Comportamentais
+                </p>
+
+            </div>
 
             <p>
                 Parece convincente.
@@ -123,23 +139,71 @@
                 <em>O que você faz?</em>
             </p>
 
-            <button onclick="responderGato('compartilhar')">
-                Compartilhar
-            </button>
+            <div class="acoes-noticia">
 
-            <button onclick="responderGato('pesquisar')">
-                Pesquisar
-            </button>
+                <button onclick="responderGato('compartilhar')">
+                    Compartilhar
+                </button>
 
-            <button onclick="responderGato('ignorar')">
-                Ignorar
-            </button>
+                <button onclick="responderGato('pesquisar')">
+                    Pesquisar
+                </button>
 
-            <button onclick="responderGato('perguntar')">
-                Perguntar quem publicou
-            </button>
+                <button onclick="responderGato('ignorar')">
+                    Ignorar
+                </button>
+
+                <button onclick="responderGato('perguntar')">
+                    Perguntar quem publicou
+                </button>
+
+            </div>
 
             <p id="resposta-gato"></p>
+
+
+            <!-- OUTRA NOTÍCIA -->
+
+            <button
+                id="outra-noticia"
+                class="botao-noticia"
+                onclick="proximaNoticia()">
+                ↻ OUTRA NOTÍCIA
+            </button>
+
+
+            <!-- ÁREA SECRETA -->
+
+            <div id="area-secreta">
+
+                <p>
+                    Você encontrou alguma coisa.
+                </p>
+
+                <p>
+                    Mas talvez ainda não tenha entendido o que encontrou.
+                </p>
+
+                <label for="senha-gato">
+                    Digite a senha:
+                </label>
+
+                <input
+                    type="text"
+                    id="senha-gato"
+                    autocomplete="off"
+                    placeholder="•••••"
+                >
+
+                <button
+                    type="button"
+                    onclick="verificarSenha()">
+                    DESCOBRIR
+                </button>
+
+                <p id="mensagem-secreta"></p>
+
+            </div>
 
         </section>
 
