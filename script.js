@@ -33,7 +33,6 @@ console.log("O script está funcionando");
 
 gato.id = "gato-interativo";
 
-// O gato usa SOMENTE left e top.
 gato.style.position = "fixed";
 gato.style.left = "calc(100vw - 225px)";
 gato.style.top = "calc(100vh - 230px)";
@@ -82,21 +81,11 @@ gatinho.addEventListener("click", () => {
 
     fala.textContent = frase;
 
-
-    // ===============================
-    // ANIMAÇÃO
-    // ===============================
-
     gatinho.classList.remove("pulando");
 
     void gatinho.offsetWidth;
 
     gatinho.classList.add("pulando");
-
-
-    // ===============================
-    // NOVA POSIÇÃO
-    // ===============================
 
     const margem = 20;
 
@@ -120,11 +109,6 @@ gatinho.addEventListener("click", () => {
             margem,
             Math.random() * maxY
         );
-
-
-    // ===============================
-    // MOVER O GATO
-    // ===============================
 
     gato.style.setProperty(
         "left",
@@ -243,13 +227,9 @@ const observador = new IntersectionObserver(
 
                 const id = entrada.target.id;
 
-                if (observacoes[id]) {
+                if (observacoes[id] && observacao) {
                     observacao.textContent = observacoes[id];
                 }
-
-                // ===============================
-                // ÚLTIMA PERGUNTA
-                // ===============================
 
                 if (id === "final" && !finalVisitado) {
 
@@ -281,6 +261,10 @@ function responderGato(acao) {
     const resposta =
         document.getElementById("resposta-gato");
 
+    if (!resposta) {
+        return;
+    }
+
     if (acao === "compartilhar") {
 
         resposta.textContent =
@@ -307,9 +291,9 @@ function responderGato(acao) {
 }
 
 
-// ===============================
-// NOTÍCIAS FICTÍCIAS
-// ===============================
+// ==================================================
+// SISTEMA DAS NOTÍCIAS
+// ==================================================
 
 const noticias = [
 
@@ -318,13 +302,10 @@ const noticias = [
             "Cientistas descobrem que ouvir música triste antes da prova aumenta a inteligência",
 
         texto:
-            "Pesquisadores afirmam que estudantes que escutam músicas melancólicas antes de uma prova apresentam um desempenho intelectual significativamente maior.",
+            "Pesquisadores afirmam que o efeito é particularmente forte em estudantes que escutam músicas melancólicas antes de uma prova.",
 
         fonte:
-            "Instituto Nacional de Estudos Comportamentais",
-
-        pista:
-            "P"
+            "Instituto Nacional de Estudos Comportamentais"
     },
 
     {
@@ -332,13 +313,10 @@ const noticias = [
             "Pesquisadores afirmam que dormir com um livro debaixo do travesseiro melhora a memória",
 
         texto:
-            "O estudo acompanhou estudantes durante seis meses e concluiu que a simples presença de um livro durante o sono poderia fortalecer a capacidade de lembrar informações.",
+            "O estudo foi realizado em três universidades durante seis meses e concluiu que a simples presença de um livro durante o sono poderia fortalecer a capacidade de lembrar informações.",
 
         fonte:
-            "Centro Internacional de Estudos do Sono",
-
-        pista:
-            "E"
+            "Centro Internacional de Estudos do Sono"
     },
 
     {
@@ -349,10 +327,7 @@ const noticias = [
             "Segundo pesquisadores, gatos seriam capazes de compreender diversas palavras humanas, mas escolheriam ignorá-las para preservar sua independência.",
 
         fonte:
-            "Instituto de Comportamento Felino",
-
-        pista:
-            "N"
+            "Instituto de Comportamento Felino"
     },
 
     {
@@ -363,10 +338,7 @@ const noticias = [
             "O aplicativo analisaria pequenos movimentos do rosto e seria capaz de identificar uma mentira antes mesmo que a pessoa terminasse de falar.",
 
         fonte:
-            "Laboratório de Tecnologia Comportamental",
-
-        pista:
-            "S"
+            "Laboratório de Tecnologia Comportamental"
     },
 
     {
@@ -377,10 +349,7 @@ const noticias = [
             "Pesquisadores observaram voluntários e concluíram que uma breve exposição à tela do celular poderia estimular novas conexões criativas.",
 
         fonte:
-            "Observatório Nacional da Criatividade",
-
-        pista:
-            "E"
+            "Observatório Nacional da Criatividade"
     }
 
 ];
@@ -394,8 +363,6 @@ let noticiaAtual = 0;
 
 function mostrarNoticia() {
 
-    const noticia = noticias[noticiaAtual];
-
     const titulo =
         document.getElementById("titulo-noticia");
 
@@ -406,101 +373,97 @@ function mostrarNoticia() {
         document.getElementById("fonte-noticia");
 
     if (!titulo || !texto || !fonte) {
+        console.log("Elementos da notícia não encontrados.");
         return;
     }
 
+    const noticia =
+        noticias[noticiaAtual];
+
 
     // ===============================
-    // NOTÍCIA 1 — P
+    // TÍTULO
+    // ===============================
+
+    titulo.textContent =
+        noticia.titulo;
+
+
+    // ===============================
+    // TEXTO + PISTAS
     // ===============================
 
     if (noticiaAtual === 0) {
 
-        titulo.innerHTML =
-            `Cientistas descobrem que ouvir música triste
-            antes da prova aumenta a inteligência`;
-
-        texto.innerHTML =
-            `Pesquisadores afirmam que o efeito é
+        texto.innerHTML = `
+            Pesquisadores afirmam que o efeito é
             <span class="pista-letra">P</span>articularmente forte
-            em estudantes que escutam músicas melancólicas antes de uma prova.`;
+            em estudantes que escutam músicas melancólicas antes de uma prova.
+        `;
     }
-
-
-    // ===============================
-    // NOTÍCIA 2 — E
-    // ===============================
 
     else if (noticiaAtual === 1) {
 
-        titulo.textContent =
-            noticia.titulo;
-
-        texto.innerHTML =
-            `O estudo foi realizado
+        texto.innerHTML = `
+            O estudo foi realizado
             <span class="pista-letra letra-invertida">E</span>m
-            três universidades durante seis meses.`;
-
+            três universidades durante seis meses.
+        `;
     }
-
-
-    // ===============================
-    // NOTÍCIA 3 — N
-    // ===============================
 
     else if (noticiaAtual === 2) {
 
-        titulo.textContent =
-            noticia.titulo;
+        texto.innerHTML = `
+            Segundo pesquisadores, gatos seriam capazes de compreender
+            diversas palavras humanas, mas escolheriam ignorá-las para
+            preservar sua independência.
 
-        texto.textContent =
-            noticia.texto;
+            <br><br>
 
-        texto.innerHTML +=
-            `<br><br>
-            <span class="pista-cenario">[ N ]</span>`;
+            <span class="pista-cenario">[ N ]</span>
+        `;
     }
-
-
-    // ===============================
-    // NOTÍCIA 4 — S
-    // ===============================
 
     else if (noticiaAtual === 3) {
 
-        titulo.textContent =
-            noticia.titulo;
+        texto.innerHTML = `
+            ${noticia.texto}
 
-        texto.innerHTML =
-            `${noticia.texto}
             <br><br>
-            <span class="pista-espelho">S</span>`;
+
+            <span class="pista-espelho">S</span>
+        `;
     }
-
-
-    // ===============================
-    // NOTÍCIA 5 — E
-    // ===============================
 
     else if (noticiaAtual === 4) {
 
-        titulo.textContent =
-            noticia.titulo;
+        texto.innerHTML = `
+            ${noticia.texto}
 
-        texto.innerHTML =
-            `${noticia.texto}
             <br><br>
-            <span class="pista-cabeca-baixo">E</span>`;
+
+            <span class="pista-cabeca-baixo">E</span>
+        `;
     }
 
 
+    // ===============================
+    // FONTE
+    // ===============================
+
     fonte.textContent =
         noticia.fonte;
+
+
+    console.log(
+        "Notícia atual:",
+        noticiaAtual + 1
+    );
 }
 
 
 // ===============================
-// PRÓXIMA NOTÍCIA
+// OUTRA NOTÍCIA
 // ===============================
 
 function proximaNoticia() {
@@ -513,9 +476,6 @@ function proximaNoticia() {
 
     mostrarNoticia();
 
-
-    // Limpar respostas antigas
-
     const resposta =
         document.getElementById("resposta-gato");
 
@@ -526,7 +486,7 @@ function proximaNoticia() {
 
 
 // ===============================
-// SENHA SECRETA
+// SENHA
 // ===============================
 
 function verificarSenha() {
@@ -543,6 +503,7 @@ function verificarSenha() {
 
     const senha =
         campo.value.trim().toUpperCase();
+
 
     if (senha === "PENSE") {
 
@@ -588,6 +549,56 @@ function verificarSenha() {
     }
 }
 
+
+// ===============================
+// GARANTIR QUE OS BOTÕES
+// ENCONTREM AS FUNÇÕES
+// ===============================
+
+window.proximaNoticia = proximaNoticia;
+window.verificarSenha = verificarSenha;
+window.responderGato = responderGato;
+
+
+// ===============================
+// BOTÃO "OUTRA NOTÍCIA"
+// ===============================
+
+const botaoOutraNoticia =
+    document.getElementById("outra-noticia");
+
+if (botaoOutraNoticia) {
+
+    botaoOutraNoticia.addEventListener(
+        "click",
+        proximaNoticia
+    );
+}
+
+
+// ===============================
+// BOTÃO DA SENHA
+// ===============================
+
+const botaoSenha =
+    document.querySelector(
+        '#area-secreta button'
+    );
+
+if (botaoSenha) {
+
+    botaoSenha.addEventListener(
+        "click",
+        verificarSenha
+    );
+}
+
+
+// ===============================
+// INICIAR
+// ===============================
+
+mostrarNoticia();
 
 // ===============================
 // INICIAR NOTÍCIA
