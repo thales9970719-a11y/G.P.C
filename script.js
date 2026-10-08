@@ -305,3 +305,292 @@ function responderGato(acao) {
             "Finalmente uma pergunta sensata. Não se entusiasme, porém; uma pergunta correta não transforma automaticamente você em uma pessoa criteriosa.";
     }
 }
+
+
+// ===============================
+// NOTÍCIAS FICTÍCIAS
+// ===============================
+
+const noticias = [
+
+    {
+        titulo:
+            "Cientistas descobrem que ouvir música triste antes da prova aumenta a inteligência",
+
+        texto:
+            "Pesquisadores afirmam que estudantes que escutam músicas melancólicas antes de uma prova apresentam um desempenho intelectual significativamente maior.",
+
+        fonte:
+            "Instituto Nacional de Estudos Comportamentais",
+
+        pista:
+            "P"
+    },
+
+    {
+        titulo:
+            "Pesquisadores afirmam que dormir com um livro debaixo do travesseiro melhora a memória",
+
+        texto:
+            "O estudo acompanhou estudantes durante seis meses e concluiu que a simples presença de um livro durante o sono poderia fortalecer a capacidade de lembrar informações.",
+
+        fonte:
+            "Centro Internacional de Estudos do Sono",
+
+        pista:
+            "E"
+    },
+
+    {
+        titulo:
+            "Gatos entendem português, mas fingem que não entendem, diz pesquisa",
+
+        texto:
+            "Segundo pesquisadores, gatos seriam capazes de compreender diversas palavras humanas, mas escolheriam ignorá-las para preservar sua independência.",
+
+        fonte:
+            "Instituto de Comportamento Felino",
+
+        pista:
+            "N"
+    },
+
+    {
+        titulo:
+            "Cientistas criam aplicativo capaz de descobrir quando alguém está mentindo",
+
+        texto:
+            "O aplicativo analisaria pequenos movimentos do rosto e seria capaz de identificar uma mentira antes mesmo que a pessoa terminasse de falar.",
+
+        fonte:
+            "Laboratório de Tecnologia Comportamental",
+
+        pista:
+            "S"
+    },
+
+    {
+        titulo:
+            "Estudo revela que olhar para o próprio celular por 30 segundos aumenta a criatividade",
+
+        texto:
+            "Pesquisadores observaram voluntários e concluíram que uma breve exposição à tela do celular poderia estimular novas conexões criativas.",
+
+        fonte:
+            "Observatório Nacional da Criatividade",
+
+        pista:
+            "E"
+    }
+
+];
+
+let noticiaAtual = 0;
+
+
+// ===============================
+// MOSTRAR NOTÍCIA
+// ===============================
+
+function mostrarNoticia() {
+
+    const noticia = noticias[noticiaAtual];
+
+    const titulo =
+        document.getElementById("titulo-noticia");
+
+    const texto =
+        document.getElementById("texto-noticia");
+
+    const fonte =
+        document.getElementById("fonte-noticia");
+
+    if (!titulo || !texto || !fonte) {
+        return;
+    }
+
+
+    // ===============================
+    // NOTÍCIA 1 — P
+    // ===============================
+
+    if (noticiaAtual === 0) {
+
+        titulo.innerHTML =
+            `Cientistas descobrem que ouvir música triste
+            antes da prova aumenta a inteligência`;
+
+        texto.innerHTML =
+            `Pesquisadores afirmam que o efeito é
+            <span class="pista-letra">P</span>articularmente forte
+            em estudantes que escutam músicas melancólicas antes de uma prova.`;
+    }
+
+
+    // ===============================
+    // NOTÍCIA 2 — E
+    // ===============================
+
+    else if (noticiaAtual === 1) {
+
+        titulo.textContent =
+            noticia.titulo;
+
+        texto.innerHTML =
+            `O estudo foi realizado
+            <span class="pista-letra letra-invertida">E</span>m
+            três universidades durante seis meses.`;
+
+    }
+
+
+    // ===============================
+    // NOTÍCIA 3 — N
+    // ===============================
+
+    else if (noticiaAtual === 2) {
+
+        titulo.textContent =
+            noticia.titulo;
+
+        texto.textContent =
+            noticia.texto;
+
+        texto.innerHTML +=
+            `<br><br>
+            <span class="pista-cenario">[ N ]</span>`;
+    }
+
+
+    // ===============================
+    // NOTÍCIA 4 — S
+    // ===============================
+
+    else if (noticiaAtual === 3) {
+
+        titulo.textContent =
+            noticia.titulo;
+
+        texto.innerHTML =
+            `${noticia.texto}
+            <br><br>
+            <span class="pista-espelho">S</span>`;
+    }
+
+
+    // ===============================
+    // NOTÍCIA 5 — E
+    // ===============================
+
+    else if (noticiaAtual === 4) {
+
+        titulo.textContent =
+            noticia.titulo;
+
+        texto.innerHTML =
+            `${noticia.texto}
+            <br><br>
+            <span class="pista-cabeca-baixo">E</span>`;
+    }
+
+
+    fonte.textContent =
+        noticia.fonte;
+}
+
+
+// ===============================
+// PRÓXIMA NOTÍCIA
+// ===============================
+
+function proximaNoticia() {
+
+    noticiaAtual++;
+
+    if (noticiaAtual >= noticias.length) {
+        noticiaAtual = 0;
+    }
+
+    mostrarNoticia();
+
+
+    // Limpar respostas antigas
+
+    const resposta =
+        document.getElementById("resposta-gato");
+
+    if (resposta) {
+        resposta.textContent = "";
+    }
+}
+
+
+// ===============================
+// SENHA SECRETA
+// ===============================
+
+function verificarSenha() {
+
+    const campo =
+        document.getElementById("senha-gato");
+
+    const mensagem =
+        document.getElementById("mensagem-secreta");
+
+    if (!campo || !mensagem) {
+        return;
+    }
+
+    const senha =
+        campo.value.trim().toUpperCase();
+
+    if (senha === "PENSE") {
+
+        mensagem.innerHTML = `
+            <strong>Você acreditou.</strong>
+
+            <br><br>
+
+            Cinco notícias falsas, uma senha escondida
+            e você ainda chegou até aqui.
+
+            <br><br>
+
+            O mais engraçado é que você estava tão ocupado
+            tentando descobrir a mentira que não percebeu que
+            <strong>a própria pergunta era uma armadilha.</strong>
+
+            <br><br>
+
+            Não se preocupe. O gato também erra.
+
+            <br><br>
+
+            A diferença é que ele desconfia quando tem certeza demais.
+
+            <br><br>
+
+            <strong>
+                Agora volte e pense um pouco antes de acreditar na próxima.
+            </strong>
+
+            <br><br>
+
+            <em>
+                Parabéns. Você acabou de ser enganado por um gato.
+            </em>
+        `;
+
+    } else {
+
+        mensagem.textContent =
+            "Não. Mas talvez você esteja procurando no lugar errado.";
+    }
+}
+
+
+// ===============================
+// INICIAR NOTÍCIA
+// ===============================
+
+mostrarNoticia();
