@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,9 +6,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>O Gato e o Pensamento Crítico — O Gato que Desconfia</title>
+    <meta name="description" content="Anotações, confissões e pensamentos de um gato que desconfia das certezas humanas.">
+
+    <title>Caderno do Gato — O Gato que Desconfia</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .caderno-abertura {
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            padding: 1.5rem 0 2rem;
+            border-bottom: 1px solid rgba(120, 110, 90, .35);
+        }
+
+        .caderno-abertura .sobretitulo,
+        .entrada-caderno .numero-entrada {
+            display: block;
+            font-size: .75rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            opacity: .72;
+            margin-bottom: .8rem;
+        }
+
+        .indice-caderno {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .55rem;
+            margin-top: 1.4rem;
+        }
+
+        .indice-caderno a {
+            display: inline-block;
+            padding: .45rem .7rem;
+            border: 1px solid rgba(120, 110, 90, .4);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        .entrada-caderno {
+            max-width: 760px;
+            margin: 0 auto 3.5rem;
+            padding: 1.5rem clamp(1rem, 4vw, 2.25rem);
+            border: 1px solid rgba(120, 110, 90, .28);
+            background: rgba(245, 239, 224, .035);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .035);
+        }
+
+        .entrada-caderno h2 {
+            margin: .2rem 0 .6rem;
+        }
+
+        .entrada-caderno .subtitulo-caderno {
+            opacity: .8;
+            margin-bottom: 1.8rem;
+        }
+
+        .entrada-caderno .poema p {
+            margin: 0 0 1.15rem;
+            line-height: 1.85;
+        }
+
+        .nota-margem {
+            margin-top: 1.8rem;
+            padding: .9rem 1rem;
+            border-left: 2px solid currentColor;
+            font-size: .92rem;
+            opacity: .82;
+        }
+
+        .texto-curto p {
+            line-height: 1.85;
+            margin: 0 0 1rem;
+        }
+
+        .final-poema {
+            font-weight: bold;
+            letter-spacing: .04em;
+        }
+
+        @media (max-width: 520px) {
+            .entrada-caderno {
+                padding: 1.2rem 1rem;
+            }
+
+            .indice-caderno a {
+                font-size: .82rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,11 +107,37 @@
             ← Voltar ao Caderno
         </a>
 
-        <article class="texto-caderno">
+        <header class="caderno-abertura">
+            <span class="sobretitulo">
+                ARQUIVO PARTICULAR · ACESSO NÃO AUTORIZADO
+            </span>
 
-            <span class="data-caderno">CADERNO DO GATO</span>
+            <h1>Caderno do Gato</h1>
 
-            <h1>O Gato e o Pensamento Crítico</h1>
+            <p>
+                Pensamentos encontrados pela casa. Alguns foram
+                escritos de propósito. Outros parecem ter escapado
+                enquanto o gato dormia.
+            </p>
+
+            <nav class="indice-caderno" aria-label="Índice do caderno">
+                <a href="#pensamento-critico">Anotação 001</a>
+                <a href="#ter-razao">Nota sobre ter razão</a>
+                <a href="#confissao">Confissão</a>
+                <a href="#absurdo">Ocorrência doméstica</a>
+            </nav>
+        </header>
+
+        <!-- ANOTAÇÃO 001 -->
+
+        <article class="texto-caderno entrada-caderno"
+            id="pensamento-critico">
+
+            <span class="numero-entrada">
+                ANOTAÇÃO 001 · CADERNO DO GATO
+            </span>
+
+            <h2>O Gato e o Pensamento Crítico</h2>
 
             <p class="subtitulo-caderno">
                 Uma pequena história sobre rotina, liberdade
@@ -31,13 +146,9 @@
 
             <div class="poema">
 
-                <p>
-                    O gato chegou em casa de madrugada.
-                </p>
+                <p>O gato chegou em casa de madrugada.</p>
 
-                <p>
-                    Ninguém sabia onde ele tinha ido.
-                </p>
+                <p>Ninguém sabia onde ele tinha ido.</p>
 
                 <p>
                     Talvez tenha brigado na rua,<br>
@@ -47,9 +158,7 @@
                     olhando a cidade dormir.
                 </p>
 
-                <p>
-                    Gato não conta.
-                </p>
+                <p>Gato não conta.</p>
 
                 <p>
                     Entrou pela janela,<br>
@@ -63,22 +172,16 @@
                     a cara.
                 </p>
 
-                <p>
-                    Como fazia todo dia.
-                </p>
+                <p>Como fazia todo dia.</p>
 
-                <p>
-                    Foi quando parou.
-                </p>
+                <p>Foi quando parou.</p>
 
                 <p>
                     Olhou para as próprias patas<br>
                     e pensou:
                 </p>
 
-                <p>
-                    <em>Será que minha vida faz sentido?</em>
-                </p>
+                <p><em>Será que minha vida faz sentido?</em></p>
 
                 <p>
                     Todo dia eu acordo,<br>
@@ -86,9 +189,7 @@
                     saio de casa.
                 </p>
 
-                <p>
-                    Volto de madrugada.
-                </p>
+                <p>Volto de madrugada.</p>
 
                 <p>
                     Meus donos acordam,<br>
@@ -96,17 +197,11 @@
                     saio de novo.
                 </p>
 
-                <p>
-                    E volto.
-                </p>
+                <p>E volto.</p>
 
-                <p>
-                    Todo dia.
-                </p>
+                <p>Todo dia.</p>
 
-                <p>
-                    <em>Será que é só isso?</em>
-                </p>
+                <p><em>Será que é só isso?</em></p>
 
                 <p>
                     <em>
@@ -137,17 +232,11 @@
                     </em>
                 </p>
 
-                <p>
-                    O gato ficou em silêncio.
-                </p>
+                <p>O gato ficou em silêncio.</p>
 
-                <p>
-                    A casa dormia.
-                </p>
+                <p>A casa dormia.</p>
 
-                <p>
-                    A rua dormia.
-                </p>
+                <p>A rua dormia.</p>
 
                 <p>
                     E pela primeira vez,<br>
@@ -155,13 +244,9 @@
                     que nenhum gato deveria ter:
                 </p>
 
-                <p>
-                    <strong>um pensamento.</strong>
-                </p>
+                <p><strong>um pensamento.</strong></p>
 
-                <p>
-                    Um pensamento crítico.
-                </p>
+                <p>Um pensamento crítico.</p>
 
                 <p>
                     Ele pensou na vida.<br>
@@ -180,49 +265,188 @@
                     na cozinha.
                 </p>
 
+                <p>Era o pote de ração.</p>
+
+                <p>O gato levantou.</p>
+
+                <p>Foi comer.</p>
+
+                <p>Depois saiu pela janela.</p>
+
+                <p>E voltou de madrugada.</p>
+
+                <p>Como fazia todo dia.</p>
+
+                <p>Talvez a vida não tivesse sentido.</p>
+
+                <p>Talvez tivesse.</p>
+
+                <p>Mas ele era só um gato.</p>
+
+                <p class="final-poema">Ainda bem.</p>
+
+            </div>
+        </article>
+
+        <!-- ANOTAÇÃO 002 -->
+
+        <article class="entrada-caderno" id="ter-razao">
+
+            <span class="numero-entrada">
+                NOTA NA MARGEM · SEM DATA
+            </span>
+
+            <h2>Sobre a necessidade de ter razão</h2>
+
+            <p class="subtitulo-caderno">
+                O gato tentou discutir. Perdeu a tarde.
+            </p>
+
+            <div class="texto-curto">
+
+                <p>As pessoas dizem que querem a verdade.</p>
+
                 <p>
-                    Era o pote de ração.
+                    Suspeito que, muitas vezes, queiram algo mais
+                    confortável: uma verdade que concorde com elas.
                 </p>
 
                 <p>
-                    O gato levantou.
+                    É por isso que uma prova contrária pode parecer
+                    uma ofensa. A ideia não está apenas na cabeça;
+                    às vezes, já ganhou quarto, sobrenome e lugar à mesa.
                 </p>
 
                 <p>
-                    Foi comer.
-                </p>
-
-                <p>
-                    Depois saiu pela janela.
-                </p>
-
-                <p>
-                    E voltou de madrugada.
-                </p>
-
-                <p>
-                    Como fazia todo dia.
-                </p>
-
-                <p>
-                    Talvez a vida não tivesse sentido.
-                </p>
-
-                <p>
-                    Talvez tivesse.
-                </p>
-
-                <p>
-                    Mas ele era só um gato.
-                </p>
-
-                <p class="final-poema">
-                    Ainda bem.
+                    Eu também faço isso, naturalmente.
+                    Sou um gato, não um milagre.
                 </p>
 
             </div>
 
+            <aside class="nota-margem">
+                Nota do gato: Desconfie de quem nunca muda de ideia.
+                E desconfie um pouco de quem muda de ideia só para
+                ganhar a discussão.
+            </aside>
+
         </article>
+
+        <!-- ANOTAÇÃO 003 -->
+
+        <article class="entrada-caderno" id="confissao">
+
+            <span class="numero-entrada">
+                CONFISSÃO Nº 02 · RASCUNHO
+            </span>
+
+            <h2>Confissão de um animal desconfiado</h2>
+
+            <p class="subtitulo-caderno">
+                Escrito depois de acusar uma cadeira de estar no caminho.
+            </p>
+
+            <div class="texto-curto">
+
+                <p>Eu desconfio de tudo.</p>
+
+                <p>
+                    Da mão que oferece carinho. Do silêncio que vem
+                    depois de uma pergunta. Do pote que está cheio
+                    demais. Principalmente do pote que está vazio.
+                </p>
+
+                <p>
+                    Mas há um problema nessa profissão: quando se
+                    desconfia de tudo, até a própria desconfiança
+                    precisa prestar depoimento.
+                </p>
+
+                <p>
+                    Já suspeitei de uma sombra por quase vinte minutos.
+                    Era minha.
+                </p>
+
+                <p>
+                    Não conte a ninguém. Tenho uma reputação de
+                    felino perspicaz a preservar.
+                </p>
+
+            </div>
+
+            <aside class="nota-margem">
+                Nota do gato: desconfiar não é decidir que tudo é mentira.
+                É deixar a porta aberta para a possibilidade de estar enganado.
+            </aside>
+
+        </article>
+
+        <!-- ANOTAÇÃO 004 -->
+
+        <article class="entrada-caderno" id="absurdo">
+
+            <span class="numero-entrada">
+                OCORRÊNCIA DOMÉSTICA · 03:17
+            </span>
+
+            <h2>O grande debate sobre a caixa</h2>
+
+            <p class="subtitulo-caderno">
+                Relato de uma crise intelectual interrompida por papelão.
+            </p>
+
+            <div class="texto-curto">
+
+                <p>Hoje me ofereceram uma cama cara.</p>
+
+                <p>Ignorei.</p>
+
+                <p>
+                    Em seguida, entrei numa caixa vazia e passei
+                    quarenta minutos pensando que aquele era o melhor
+                    lugar do mundo.
+                </p>
+
+                <p>
+                    Os humanos chamaram isso de comportamento irracional.
+                    São as mesmas criaturas que compram uma mesa para
+                    colocar coisas em cima e depois compram outra mesa
+                    para guardar as coisas que estavam na primeira.
+                </p>
+
+                <p>Não julgo. Só observo.</p>
+
+                <p>
+                    Depois dormi na caixa e esqueci a conclusão que
+                    estava prestes a revolucionar a filosofia.
+                </p>
+
+                <p>
+                    Talvez fosse uma conclusão ruim.
+                    Ou talvez a filosofia precise de mais sonecas.
+                </p>
+
+            </div>
+
+            <aside class="nota-margem">
+                Nota do gato: nem toda pergunta precisa terminar numa
+                resposta. Algumas terminam numa caixa de papelão.
+            </aside>
+
+        </article>
+
+        <p style="text-align: center; margin: 2.5rem auto; max-width: 620px;">
+            <em>
+                O caderno termina aqui. O gato afirma que não há mais páginas.<br>
+                O gato também mente quando quer dormir.
+            </em>
+        </p>
+
+        <p style="text-align: center;">
+            <a href="index.html#caderno" class="voltar-caderno">
+                ← Voltar ao site
+            </a>
+        </p>
 
     </main>
 
@@ -231,5 +455,4 @@
     </footer>
 
 </body>
-
 </html>
