@@ -904,3 +904,334 @@ footer {
     }
 
 }
+
+
+/* ===============================
+   ARQUIVO DE NOTÍCIAS — DESCONFIE
+   Visual editorial, sem alterar o JavaScript
+   =============================== */
+
+#desconfie {
+    position: relative;
+    align-items: flex-start;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(115, 99, 73, 0.09), transparent 30%),
+        linear-gradient(145deg, #111 0%, #0d0d0d 75%);
+}
+
+#desconfie h2 {
+    margin-bottom: 18px;
+}
+
+#desconfie > p:first-of-type {
+    max-width: 700px;
+    margin-bottom: 28px;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+}
+
+/* Recorte de jornal */
+#noticia-falsa {
+    position: relative;
+    isolation: isolate;
+    width: min(760px, 100%);
+    margin: 8px 0 28px;
+    padding: clamp(24px, 4vw, 42px);
+    overflow: hidden;
+    color: #24221e;
+    background-color: #e6dfcf;
+    background-image:
+        radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.62), transparent 42%),
+        radial-gradient(ellipse at 85% 90%, rgba(95, 75, 48, 0.10), transparent 40%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(60, 48, 30, 0.025) 0,
+            rgba(60, 48, 30, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    border: 1px solid #bdb39f;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+    transform: rotate(-0.25deg);
+}
+
+#noticia-falsa::before {
+    content: "ARQUIVO DE NOTÍCIAS";
+    display: block;
+    margin-bottom: 17px;
+    padding-bottom: 10px;
+    color: #595247;
+    border-bottom: 2px solid #454036;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+#noticia-falsa::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.etiqueta-noticia {
+    display: inline-block;
+    margin-bottom: 17px;
+    padding: 4px 8px;
+    border: 1px solid #8d4d40;
+    color: #8d4d40;
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    transform: rotate(-2deg);
+}
+
+#titulo-noticia {
+    max-width: 650px;
+    margin-bottom: 20px;
+    color: #211f1a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 3.6vw, 2.65rem);
+    font-weight: bold;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+}
+
+#texto-noticia {
+    max-width: 650px;
+    margin-bottom: 22px;
+    color: #39352e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1rem, 1.8vw, 1.12rem);
+    line-height: 1.75;
+}
+
+#fonte-noticia {
+    max-width: 100%;
+    margin: 0;
+    padding-top: 13px;
+    border-top: 1px solid #b5aa96;
+    color: #655d50;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+/* Pistas tipográficas: sutis, mas legíveis */
+.pista-letra {
+    color: inherit;
+    font-weight: inherit;
+}
+
+.letra-invertida {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.pista-cenario {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 3px 7px;
+    border: 1px solid rgba(57, 53, 46, 0.35);
+    color: #39352e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+}
+
+.pista-espelho {
+    display: inline-block;
+    color: #39352e;
+    transform: scaleX(-1);
+}
+
+.pista-cabeca-baixo {
+    display: inline-block;
+    color: #39352e;
+    transform: rotate(180deg);
+}
+
+/* Pergunta e decisões */
+#desconfie > p {
+    max-width: 760px;
+}
+
+.acoes-noticia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: min(760px, 100%);
+    margin: 3px 0 10px;
+}
+
+#desconfie .acoes-noticia button {
+    margin: 0;
+    padding: 11px 17px;
+    border-color: #555149;
+    color: #d9d3c8;
+    font-size: 0.92rem;
+}
+
+#desconfie .acoes-noticia button:hover {
+    background: #e6dfcf;
+    border-color: #e6dfcf;
+    color: #171613;
+}
+
+#resposta-gato {
+    width: min(760px, 100%);
+    min-height: 0;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 2px solid #777064;
+    color: #d0ccc3;
+    line-height: 1.7;
+}
+
+/* Botão para avançar no arquivo */
+#desconfie .botao-noticia {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 28px;
+    padding: 12px 18px;
+    border-color: #827968;
+    color: #e8e0d2;
+    font-size: 0.82rem;
+    letter-spacing: 0.09em;
+}
+
+#desconfie .botao-noticia:hover {
+    background: #e6dfcf;
+    border-color: #e6dfcf;
+    color: #171613;
+}
+
+/* Campo da senha: aparência de anotação no arquivo */
+#area-secreta {
+    width: min(760px, 100%);
+    margin-top: 42px;
+    padding: clamp(22px, 4vw, 34px);
+    border: 1px solid #35322c;
+    background:
+        linear-gradient(135deg, rgba(230, 223, 207, 0.035), transparent 65%),
+        #121212;
+}
+
+#area-secreta p {
+    font-size: 1rem;
+    color: #aaa397;
+}
+
+#area-secreta label {
+    display: block;
+    margin: 22px 0 8px;
+    color: #d5cfc3;
+    font-size: 0.92rem;
+}
+
+#senha-gato {
+    display: block;
+    width: min(340px, 100%);
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #5a554b;
+    border-radius: 0;
+    outline: none;
+    background: #0c0c0c;
+    color: #eee8dc;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+}
+
+#senha-gato:focus {
+    border-color: #c8bdab;
+    box-shadow: 0 0 0 2px rgba(200, 189, 171, 0.12);
+}
+
+#area-secreta button {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+}
+
+#mensagem-secreta {
+    max-width: 650px;
+    margin-top: 24px;
+    color: #d0ccc3;
+    line-height: 1.85;
+}
+
+#mensagem-secreta strong {
+    color: #f0e8d9;
+    font-weight: normal;
+}
+
+#mensagem-secreta em {
+    color: #a9a092;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 700px) {
+    #noticia-falsa {
+        margin-top: 5px;
+        padding: 23px 20px;
+        transform: none;
+    }
+
+    #noticia-falsa::before {
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+    }
+
+    #titulo-noticia {
+        font-size: 1.75rem;
+        letter-spacing: -0.035em;
+    }
+
+    #texto-noticia {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .acoes-noticia {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    #desconfie .acoes-noticia button {
+        min-height: 46px;
+        margin: 0;
+        padding: 10px;
+        font-size: 0.86rem;
+    }
+
+    #desconfie .botao-noticia {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+    }
+
+    #area-secreta {
+        margin-top: 32px;
+    }
+
+    #senha-gato {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    #area-secreta button {
+        min-height: 46px;
+    }
+}
