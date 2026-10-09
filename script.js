@@ -253,6 +253,101 @@ secoes.forEach((secao) => {
 
 
 // ===============================
+// JORNADA DE PENSAMENTOS
+// ===============================
+
+const pensamentos = [
+    {
+        pergunta: "Você acredita nisso porque pesquisou ou porque ouviu tantas vezes que parece verdade?",
+        comentario: "O gato coça a orelha. Repetição é uma excelente imitação de prova."
+    },
+    {
+        pergunta: "Se todo mundo ao seu redor acredita numa mentira, ela se torna verdade?",
+        comentario: "A maioria pode estar certa. Também pode estar apenas em maioria."
+    },
+    {
+        pergunta: "Quando uma ideia combina com aquilo que você já pensa, você a examina com o mesmo cuidado?",
+        comentario: "É curioso como exigimos provas dos outros e aceitamos um aceno quando concordam conosco."
+    },
+    {
+        pergunta: "Quem ganha alguma coisa quando você acredita numa informação?",
+        comentario: "Nem toda mentira tem um vilão. Mas toda informação merece ser examinada."
+    },
+    {
+        pergunta: "Se você descobrir que estava errado, o que exatamente terá perdido?",
+        comentario: "Estar errado custa menos quando a gente não transforma uma opinião em parte da própria identidade."
+    },
+    {
+        pergunta: "Você escolheu suas certezas ou apenas herdou algumas delas?",
+        comentario: "Há ideias que recebemos tão cedo que confundimos com a nossa própria voz."
+    },
+    {
+        pergunta: "Como você sabe que está pensando por conta própria?",
+        comentario: "Até a rebeldia pode seguir um roteiro escrito por outra pessoa."
+    },
+    {
+        pergunta: "E se eu estiver errado? Você ainda acredita em mim?",
+        comentario: "Cuidado. Você chegou até aqui seguindo perguntas feitas por um gato."
+    }
+];
+
+let pensamentoAtual = 0;
+
+function mostrarPensamento() {
+    const progresso = document.getElementById("progresso-pensamentos");
+    const pergunta = document.getElementById("pergunta-pensamento");
+    const comentario = document.getElementById("comentario-pensamento");
+    const botao = document.getElementById("proximo-pensamento");
+    const fim = document.getElementById("fim-pensamentos");
+
+    if (!progresso || !pergunta || !comentario || !botao || !fim) {
+        return;
+    }
+
+    const pensamento = pensamentos[pensamentoAtual];
+
+    progresso.textContent =
+        "ANOTAÇÃO " + String(pensamentoAtual + 1).padStart(2, "0");
+
+    pergunta.textContent = pensamento.pergunta;
+    comentario.textContent = pensamento.comentario;
+
+    fim.hidden = true;
+    botao.hidden = false;
+
+    if (pensamentoAtual === pensamentos.length - 1) {
+        botao.textContent = "ENCERRAR A JORNADA";
+    } else {
+        botao.textContent = "CONTINUAR →";
+    }
+}
+
+function proximoPensamento() {
+    const botao = document.getElementById("proximo-pensamento");
+    const fim = document.getElementById("fim-pensamentos");
+    const comentario = document.getElementById("comentario-pensamento");
+
+    if (!botao || !fim || !comentario) {
+        return;
+    }
+
+    if (pensamentoAtual < pensamentos.length - 1) {
+        pensamentoAtual++;
+        mostrarPensamento();
+        return;
+    }
+
+    botao.hidden = true;
+    fim.hidden = false;
+    fim.textContent =
+        "Você chegou ao fim das perguntas. Isso não significa que terminou de pensar.";
+    comentario.textContent =
+        "Pronto. Agora pode desconfiar do gato. Seria estranho se não desconfiasse.";
+}
+
+window.proximoPensamento = proximoPensamento;
+
+// ===============================
 // RESPOSTAS DO GATO
 // ===============================
 
@@ -561,47 +656,8 @@ window.responderGato = responderGato;
 
 
 // ===============================
-// BOTÃO "OUTRA NOTÍCIA"
-// ===============================
-
-const botaoOutraNoticia =
-    document.getElementById("outra-noticia");
-
-if (botaoOutraNoticia) {
-
-    botaoOutraNoticia.addEventListener(
-        "click",
-        proximaNoticia
-    );
-}
-
-
-// ===============================
-// BOTÃO DA SENHA
-// ===============================
-
-const botaoSenha =
-    document.querySelector(
-        '#area-secreta button'
-    );
-
-if (botaoSenha) {
-
-    botaoSenha.addEventListener(
-        "click",
-        verificarSenha
-    );
-}
-
-
-// ===============================
 // INICIAR
 // ===============================
 
 mostrarNoticia();
-
-// ===============================
-// INICIAR NOTÍCIA
-// ===============================
-
-mostrarNoticia();
+mostrarPensamento();
