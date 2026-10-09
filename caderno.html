@@ -13,89 +13,62 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .caderno-abertura {
-            max-width: 760px;
-            margin: 0 auto 2.5rem;
-            padding: 1.5rem 0 2rem;
-            border-bottom: 1px solid rgba(120, 110, 90, .35);
-        }
 
-        .caderno-abertura .sobretitulo,
-        .entrada-caderno .numero-entrada {
-            display: block;
-            font-size: .75rem;
-            letter-spacing: .16em;
-            text-transform: uppercase;
-            opacity: .72;
-            margin-bottom: .8rem;
-        }
+/* Correção do cabeçalho do Caderno do Gato */
 
-        .indice-caderno {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .55rem;
-            margin-top: 1.4rem;
-        }
+.caderno-abertura {
+    width: min(760px, calc(100% - 40px));
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    padding: 2.5rem 0 2rem;
+    box-sizing: border-box;
+    display: block;
+}
 
-        .indice-caderno a {
-            display: inline-block;
-            padding: .45rem .7rem;
-            border: 1px solid rgba(120, 110, 90, .4);
-            border-radius: 2px;
-            text-decoration: none;
-            font-size: .9rem;
-        }
+.caderno-abertura .sobretitulo {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+    overflow-wrap: normal;
+}
 
-        .entrada-caderno {
-            max-width: 760px;
-            margin: 0 auto 3.5rem;
-            padding: 1.5rem clamp(1rem, 4vw, 2.25rem);
-            border: 1px solid rgba(120, 110, 90, .28);
-            background: rgba(245, 239, 224, .035);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, .035);
-        }
+.caderno-abertura h1 {
+    margin: 0 0 1rem;
+    line-height: 1.2;
+}
 
-        .entrada-caderno h2 {
-            margin: .2rem 0 .6rem;
-        }
+.caderno-abertura > p {
+    max-width: 620px;
+    line-height: 1.8;
+    margin: 0;
+}
 
-        .entrada-caderno .subtitulo-caderno {
-            opacity: .8;
-            margin-bottom: 1.8rem;
-        }
+.indice-caderno {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
 
-        .entrada-caderno .poema p {
-            margin: 0 0 1.15rem;
-            line-height: 1.85;
-        }
+.indice-caderno a {
+    white-space: normal;
+    line-height: 1.5;
+    padding: 0.65rem 0.85rem;
+}
 
-        .nota-margem {
-            margin-top: 1.8rem;
-            padding: .9rem 1rem;
-            border-left: 2px solid currentColor;
-            font-size: .92rem;
-            opacity: .82;
-        }
+@media (max-width: 600px) {
+    .caderno-abertura {
+        width: calc(100% - 32px);
+        padding-top: 1.5rem;
+    }
 
-        .texto-curto p {
-            line-height: 1.85;
-            margin: 0 0 1rem;
-        }
-
-        .final-poema {
-            font-weight: bold;
-            letter-spacing: .04em;
-        }
-
-        @media (max-width: 520px) {
-            .entrada-caderno {
-                padding: 1.2rem 1rem;
-            }
-
-            .indice-caderno a {
-                font-size: .82rem;
-            }
-        }
+    .indice-caderno a {
+        font-size: 0.85rem;
+    }
+}
     </style>
 </head>
 
