@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,9 +26,9 @@
     </header>
 
 
-    <!-- PÁGINA INICIAL -->
     <main>
 
+        <!-- PÁGINA INICIAL -->
         <section id="inicio">
             <h2>Por que você acredita nisso?</h2>
 
@@ -58,43 +59,47 @@
         </section>
 
 
-        <!-- PENSAMENTOS -->
+        <!-- PENSAMENTOS: JORNADA INTERATIVA -->
         <section id="pensamentos">
+
             <h2>Pensamentos</h2>
 
             <p>
-                Você acredita nisso porque pesquisou?
+                Não tenha pressa de responder.
+                Algumas perguntas ficam melhores quando não encontram
+                uma resposta imediatamente.
             </p>
 
-            <p>
-                Ou porque todo mundo acredita?
-            </p>
+            <div id="jornada-pensamentos">
 
-            <p>
-                Se todo mundo concorda, isso torna uma ideia verdadeira?
-            </p>
+                <p id="progresso-pensamentos">
+                    ANOTAÇÃO 01
+                </p>
 
-            <p>
-                Quem ganha quando você acredita?
-            </p>
+                <h3 id="pergunta-pensamento">
+                    Você acredita nisso porque pesquisou
+                    ou porque ouviu tantas vezes que parece verdade?
+                </h3>
 
-            <p>
-                Se você descobrir que está errado,
-                o que exatamente terá perdido?
-            </p>
+                <p id="comentario-pensamento">
+                    O gato coça a orelha.
+                    Repetição é uma excelente imitação de prova.
+                </p>
 
-            <p>
-                Quantas das suas certezas sobreviveriam
-                se ninguém concordasse com você?
-            </p>
+                <button
+                    type="button"
+                    id="proximo-pensamento"
+                    onclick="proximoPensamento()">
+                    CONTINUAR →
+                </button>
 
-            <p>
-                E se eu estiver errado?
-            </p>
+                <p id="fim-pensamentos" hidden>
+                    Você chegou ao fim das perguntas.
+                    Isso não significa que terminou de pensar.
+                </p>
 
-            <p>
-                Você ainda acredita em mim?
-            </p>
+            </div>
+
         </section>
 
 
@@ -163,7 +168,6 @@
 
 
             <!-- OUTRA NOTÍCIA -->
-
             <button
                 id="outra-noticia"
                 class="botao-noticia"
@@ -173,7 +177,6 @@
 
 
             <!-- ÁREA SECRETA -->
-
             <div id="area-secreta">
 
                 <p>
@@ -218,9 +221,7 @@
                     CADERNO
                 </span>
 
-                <h3>
-                    O Gato e o Pensamento Crítico
-                </h3>
+                <h3>O Gato e o Pensamento Crítico</h3>
 
                 <p>
                     Uma pequena história sobre rotina, liberdade
