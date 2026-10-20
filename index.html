@@ -247,16 +247,102 @@
 
 
         <!-- FINAL -->
-        <section id="final">
+        <section id="final" class="final-perturbador">
+
+            <p class="final-etiqueta">
+                FIM DO ARQUIVO
+            </p>
+
             <h2>Então...</h2>
 
-            <p>
-                Eu não queria que você acreditasse em mim.
-            </p>
+            <div class="final-ato" id="final-ato-1">
 
-            <p>
-                Só queria que você perguntasse o porquê.
-            </p>
+                <p>
+                    Eu não queria que você acreditasse em mim.
+                </p>
+
+                <p>
+                    Só queria que você perguntasse o porquê.
+                </p>
+
+            </div>
+
+
+            <div class="final-ato" id="final-ato-2">
+
+                <p>
+                    Mas você chegou até aqui.
+                </p>
+
+                <p>
+                    Leu minhas perguntas, examinou minhas notícias,
+                    procurou pistas. Em algum momento, decidiu que
+                    valia a pena continuar.
+                </p>
+
+                <p class="final-pergunta">
+                    Por quê?
+                </p>
+
+            </div>
+
+
+            <div class="final-ato" id="final-ato-3">
+
+                <h3>Você pode fechar a página.</h3>
+
+                <p>
+                    Não há senha depois desta.
+                    Nenhuma mensagem secreta.
+                    Nenhuma revelação esperando o último clique.
+                </p>
+
+                <p class="final-silencio">...</p>
+
+                <p>
+                    Você está esperando que eu minta, não está?
+                </p>
+
+                <button
+                    type="button"
+                    id="revelar-final"
+                    class="botao-final"
+                    aria-controls="ultima-fala"
+                    aria-expanded="false">
+                    CONTINUAR MESMO ASSIM
+                </button>
+
+            </div>
+
+
+            <div
+                class="ultima-fala"
+                id="ultima-fala"
+                hidden>
+
+                <p class="final-etiqueta">
+                    ÚLTIMA ANOTAÇÃO
+                </p>
+
+                <h3>Eu também não sei.</h3>
+
+                <p>
+                    Talvez eu só seja um gato numa página.
+                    Talvez você tenha encontrado exatamente
+                    o que veio procurar.
+                </p>
+
+                <p>
+                    O problema é que agora você vai ter que
+                    decidir isso sem a minha ajuda.
+                </p>
+
+                <p class="assinatura-gato">
+                    — O gato
+                </p>
+
+            </div>
+
         </section>
 
     </main>
@@ -271,6 +357,28 @@
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
+    <script>
+        // Revelação final: só acontece quando o visitante escolhe continuar.
+        (() => {
+            const botao = document.getElementById("revelar-final");
+            const ultimaFala = document.getElementById("ultima-fala");
+
+            if (!botao || !ultimaFala) return;
+
+            botao.addEventListener("click", () => {
+                ultimaFala.hidden = false;
+                botao.setAttribute("aria-expanded", "true");
+                botao.hidden = true;
+
+                ultimaFala.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
+
