@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -13,62 +12,61 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Correção do cabeçalho do Caderno do Gato */
 
-/* Correção do cabeçalho do Caderno do Gato */
+        .caderno-abertura {
+            width: min(760px, calc(100% - 40px));
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            padding: 2.5rem 0 2rem;
+            box-sizing: border-box;
+            display: block;
+        }
 
-.caderno-abertura {
-    width: min(760px, calc(100% - 40px));
-    max-width: 760px;
-    margin: 0 auto 2.5rem;
-    padding: 2.5rem 0 2rem;
-    box-sizing: border-box;
-    display: block;
-}
+        .caderno-abertura .sobretitulo {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            line-height: 1.6;
+            overflow-wrap: normal;
+        }
 
-.caderno-abertura .sobretitulo {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    line-height: 1.6;
-    overflow-wrap: normal;
-}
+        .caderno-abertura h1 {
+            margin: 0 0 1rem;
+            line-height: 1.2;
+        }
 
-.caderno-abertura h1 {
-    margin: 0 0 1rem;
-    line-height: 1.2;
-}
+        .caderno-abertura > p {
+            max-width: 620px;
+            line-height: 1.8;
+            margin: 0;
+        }
 
-.caderno-abertura > p {
-    max-width: 620px;
-    line-height: 1.8;
-    margin: 0;
-}
+        .indice-caderno {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
 
-.indice-caderno {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-}
+        .indice-caderno a {
+            white-space: normal;
+            line-height: 1.5;
+            padding: 0.65rem 0.85rem;
+        }
 
-.indice-caderno a {
-    white-space: normal;
-    line-height: 1.5;
-    padding: 0.65rem 0.85rem;
-}
+        @media (max-width: 600px) {
+            .caderno-abertura {
+                width: calc(100% - 32px);
+                padding-top: 1.5rem;
+            }
 
-@media (max-width: 600px) {
-    .caderno-abertura {
-        width: calc(100% - 32px);
-        padding-top: 1.5rem;
-    }
-
-    .indice-caderno a {
-        font-size: 0.85rem;
-    }
-}
+            .indice-caderno a {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 
@@ -98,6 +96,8 @@
                 <a href="#ter-razao">Nota sobre ter razão</a>
                 <a href="#confissao">Confissão</a>
                 <a href="#absurdo">Ocorrência doméstica</a>
+                <a href="#museu-passarinhos">O Museu dos Passarinhos</a>
+                <a href="#julgamento-inuteis">O Julgamento das Coisas Inúteis</a>
             </nav>
         </header>
 
@@ -406,6 +406,218 @@
                 resposta. Algumas terminam numa caixa de papelão.
             </aside>
 
+        </article>
+
+        <!-- ANOTAÇÃO 005 -->
+
+        <article class="entrada-caderno" id="museu-passarinhos">
+
+            <span class="numero-entrada">
+                ARQUIVO PARTICULAR · PROCEDÊNCIA DESCONHECIDA
+            </span>
+
+            <h2>O Museu dos Passarinhos que Sonhavam</h2>
+
+            <div class="texto-curto">
+
+                <p>O gato encontrou o museu atrás de uma porta que não existia na noite anterior.</p>
+
+                <p>Na entrada, um funcionário sem rosto pediu seu ingresso.</p>
+
+                <p>— Não tenho dinheiro — disse o gato.</p>
+
+                <p>— Não cobramos dinheiro. Cobramos lembranças.</p>
+
+                <p>O gato pensou um pouco e entregou a lembrança de uma tarde de sol em que não tinha nada para fazer.</p>
+
+                <p>O funcionário examinou o pagamento.</p>
+
+                <p>— Esta lembrança não tem utilidade.</p>
+
+                <p>— Por isso mesmo eu gostava dela.</p>
+
+                <p>O funcionário não respondeu. Carimbou-lhe a testa e abriu a porta.</p>
+
+                <p>O primeiro salão estava cheio de gaiolas.</p>
+
+                <p>Dentro delas, passarinhos dormiam de olhos abertos. Acima de cada gaiola, uma pequena placa descrevia o sonho de seu ocupante.</p>
+
+                <p><em>Um passarinho sonhava que podia atravessar o oceano.</em></p>
+
+                <p><em>Outro sonhava que os homens desaprendiam a construir muros.</em></p>
+
+                <p><em>Um terceiro sonhava que ninguém precisava pedir licença para cantar.</em></p>
+
+                <p>O gato caminhou devagar.</p>
+
+                <p>No fim do corredor, encontrou uma televisão ligada. A tela transmitia uma floresta, embora não houvesse floresta alguma no museu.</p>
+
+                <p>Na imagem, os passarinhos voavam sem gaiolas.</p>
+
+                <p>O gato sentou-se para assistir.</p>
+
+                <p>— Isso aconteceu? — perguntou ao funcionário.</p>
+
+                <p>— Está passando na televisão.</p>
+
+                <p>— Não foi o que perguntei.</p>
+
+                <p>O funcionário ajeitou a gravata.</p>
+
+                <p>Na sala seguinte, havia um palco. Um passarinho amarelo estava pousado sobre um microfone. Abriu o bico.</p>
+
+                <p>Nenhum som saiu.</p>
+
+                <p>Na plateia, centenas de passarinhos mantinham os olhos fechados, como se conhecessem aquela canção desde antes de nascer.</p>
+
+                <p>O gato olhou para a placa:</p>
+
+                <p><strong>ESPÉCIME 47 — CANTO NÃO REGISTRADO.</strong></p>
+
+                <p>— Por que ele não canta? — perguntou.</p>
+
+                <p>— Porque não há registro de que tenha cantado.</p>
+
+                <p>— E por que não há registro?</p>
+
+                <p>— Porque ele nunca cantou.</p>
+
+                <p>O gato olhou para o passarinho amarelo.</p>
+
+                <p>O passarinho olhou de volta.</p>
+
+                <p>Por um instante, pareceu que os dois sabiam alguma coisa que o museu inteiro havia esquecido.</p>
+
+                <p>Na saída, o funcionário devolveu ao gato a lembrança da tarde de sol.</p>
+
+                <p>— Não queremos isso aqui — disse. — Não consta em nosso catálogo.</p>
+
+                <p>O gato levou a lembrança para casa.</p>
+
+                <p>Naquela noite, sonhou que havia uma porta em sua parede.</p>
+
+                <p>Do outro lado, alguém assobiava.</p>
+
+                <p>Pela manhã, o gato encontrou uma pena amarela embaixo da cama.</p>
+
+                <p>Não contou a ninguém.</p>
+
+                <p class="final-poema">Museus são lugares delicados. Às vezes, basta uma prova para que precisem fechar as portas.</p>
+
+            </div>
+        </article>
+
+        <!-- ANOTAÇÃO 006 -->
+
+        <article class="entrada-caderno" id="julgamento-inuteis">
+
+            <span class="numero-entrada">
+                TRIBUNAL CENTRAL · SESSÃO DAS 9H
+            </span>
+
+            <h2>O Julgamento das Coisas Inúteis</h2>
+
+            <div class="texto-curto">
+
+                <p>O gato chegou atrasado ao julgamento.</p>
+
+                <p>Não por descuido. Estava ocupado olhando uma formiga carregar uma migalha três vezes maior que ela.</p>
+
+                <p>No tribunal, o juiz bateu o martelo.</p>
+
+                <p>— Estamos reunidos para julgar tudo aquilo que não produz resultado.</p>
+
+                <p>O primeiro réu foi uma árvore.</p>
+
+                <p>— Qual é a sua função? — perguntou o juiz.</p>
+
+                <p>— Dou sombra.</p>
+
+                <p>— E quanto produz por hora?</p>
+
+                <p>A árvore permaneceu em silêncio.</p>
+
+                <p>— Próximo.</p>
+
+                <p>Uma música foi chamada ao banco dos réus.</p>
+
+                <p>— O que você fabrica?</p>
+
+                <p>— Não sei — respondeu ela. — Às vezes, coragem. Às vezes, saudade. Às vezes, nada.</p>
+
+                <p>O juiz consultou seus papéis.</p>
+
+                <p>— Nada não consta como produto.</p>
+
+                <p>A música foi condenada a tocar apenas durante o expediente.</p>
+
+                <p>Depois veio uma tarde de domingo.</p>
+
+                <p>Estava amarrotada, cheirava a café e não tinha compromisso algum.</p>
+
+                <p>— Onde você pretende chegar? — perguntou o promotor.</p>
+
+                <p>— A lugar nenhum.</p>
+
+                <p>O tribunal inteiro murmurou.</p>
+
+                <p>— Então por que existe?</p>
+
+                <p>— Não sabia que precisava de autorização.</p>
+
+                <p>O juiz pediu silêncio.</p>
+
+                <p>A tarde foi condenada a ser preenchida com tarefas.</p>
+
+                <p>Por fim, chamaram uma criança que brincava de inventar nomes para as nuvens.</p>
+
+                <p>— Qual é sua contribuição para a sociedade? — perguntou o promotor.</p>
+
+                <p>— Aquela ali é um cachorro com seis orelhas.</p>
+
+                <p>— Responda à pergunta.</p>
+
+                <p>— Eu respondi.</p>
+
+                <p>O juiz suspirou.</p>
+
+                <p>— Próximo.</p>
+
+                <p>O gato, que até então observava do fundo da sala, levantou a pata.</p>
+
+                <p>— Gostaria de fazer uma pergunta.</p>
+
+                <p>— O senhor é réu?</p>
+
+                <p>— Ainda não.</p>
+
+                <p>— Então não tem direito à palavra.</p>
+
+                <p>O gato abaixou a pata.</p>
+
+                <p>O tribunal continuou julgando árvores, músicas, tardes, brincadeiras e tudo aquilo que não sabia apresentar um relatório de desempenho.</p>
+
+                <p>Quando a sessão terminou, o juiz voltou para casa.</p>
+
+                <p>Passou por uma árvore e reclamou do estacionamento.</p>
+
+                <p>Ouviu uma música e pulou o anúncio.</p>
+
+                <p>Chegou à própria casa, sentou-se na varanda e ficou olhando o céu durante vinte minutos.</p>
+
+                <p>Na manhã seguinte, o gato encontrou uma nova acusação sobre a mesa do tribunal.</p>
+
+                <p><strong>RÉU: O TEMPO PERDIDO.</strong></p>
+
+                <p>Abaixo, alguém havia escrito, com uma letra pequena:</p>
+
+                <p><em>Perdido por quem?</em></p>
+
+                <p>O gato não assinou a pergunta.</p>
+
+                <p class="final-poema">Mas também não a apagou.</p>
+
+            </div>
         </article>
 
         <p style="text-align: center; margin: 2.5rem auto; max-width: 620px;">
