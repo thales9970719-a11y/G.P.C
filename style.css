@@ -1539,3 +1539,113 @@ header.caderno-abertura nav.indice-caderno a:hover {
     }
 }
 
+
+/* CONVERSA COM O GATO */
+#conversa-gato {
+    max-width: 680px;
+    margin: 80px auto;
+    padding: 32px;
+    color: #e8e3dc;
+    background: #111110;
+    border: 1px solid #38352f;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    font-family: Georgia, serif;
+}
+
+#conversa-gato h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+#conversa-gato > p {
+    color: #aaa49b;
+    line-height: 1.7;
+}
+
+#mensagens-gato {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 100px;
+    max-height: 320px;
+    overflow-y: auto;
+    margin: 25px 0;
+    padding: 20px;
+    background: #090909;
+    border: 1px solid #292724;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+#mensagens-gato p {
+    margin: 0;
+}
+
+#mensagens-gato strong {
+    color: #c6a978;
+    font-weight: normal;
+}
+
+#formulario-gato {
+    display: flex;
+    gap: 10px;
+}
+
+#mensagem-usuario {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    color: #eee9e1;
+    background: #090909;
+    border: 1px solid #454139;
+    border-radius: 6px;
+    outline: none;
+    font: inherit;
+    transition: border-color 0.2s;
+}
+
+#mensagem-usuario:focus {
+    border-color: #c6a978;
+}
+
+#mensagem-usuario::placeholder {
+    color: #777168;
+}
+
+#formulario-gato button {
+    padding: 13px 20px;
+    color: #111;
+    background: #c6a978;
+    border: 1px solid #c6a978;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#formulario-gato button:hover {
+    background: #dfc69c;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    #conversa-gato {
+        margin: 45px 16px;
+        padding: 22px;
+    }
+
+    #conversa-gato h2 {
+        font-size: 1.65rem;
+    }
+
+    #formulario-gato {
+        flex-direction: column;
+    }
+
+    #formulario-gato button {
+        width: 100%;
+    }
+}
