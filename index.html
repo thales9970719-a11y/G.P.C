@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -56,6 +55,48 @@
                 Mas talvez ele não esteja aqui para ensinar alguma coisa.
                 Talvez esteja aqui apenas para fazer você pensar.
             </p>
+
+            <!-- CONVERSA COM O GATO -->
+            <div id="conversa-gato">
+
+                <div class="cabecalho-chat">
+                    <span class="indicador-gato" aria-hidden="true"></span>
+
+                    <div>
+                        <h3>Uma conversa inconveniente</h3>
+                        <p>O Gato que Desconfia · disponível, infelizmente</p>
+                    </div>
+                </div>
+
+                <div id="mensagens-gato" aria-live="polite">
+                    <div class="mensagem mensagem-gato">
+                        <span class="autor-mensagem">O GATO</span>
+                        <p>
+                            Você veio conversar ou terceirizar o próprio pensamento?
+                        </p>
+                    </div>
+                </div>
+
+                <form id="formulario-gato">
+                    <input
+                        type="text"
+                        id="mensagem-usuario"
+                        placeholder="Diga alguma coisa..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" aria-label="Enviar mensagem">
+                        ↗
+                    </button>
+                </form>
+
+                <p class="aviso-chat">
+                    Pense antes de enviar. Ou não. Não sou seu pai.
+                </p>
+
+            </div>
+
         </section>
 
 
@@ -354,29 +395,11 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT ORIGINAL -->
     <script src="script.js"></script>
-    <div id="conversa-gato">
-    <h2>Converse com o Gato</h2>
 
-    <p>Ele está ouvindo. Infelizmente, para os dois.</p>
 
-    <div id="mensagens-gato">
-        <p><strong>Gato:</strong> Você veio conversar ou terceirizar o próprio pensamento?</p>
-    </div>
-
-    <form id="formulario-gato">
-        <input
-            type="text"
-            id="mensagem-usuario"
-            placeholder="Diga alguma coisa ao gato..."
-            autocomplete="off"
-            required
-        >
-        <button type="submit">ENVIAR</button>
-    </form>
-</div>
-
+    <!-- REVELAÇÃO FINAL -->
     <script>
         // Revelação final: só acontece quando o visitante escolhe continuar.
         (() => {
@@ -401,4 +424,3 @@
 </body>
 
 </html>
-
