@@ -1649,3 +1649,159 @@ header.caderno-abertura nav.indice-caderno a:hover {
         width: 100%;
     }
 }
+/* ===============================
+   CHAT DO GATO — ACABAMENTO
+   =============================== */
+
+#conversa-gato {
+    width: min(680px, 100%);
+    margin: 55px auto;
+    padding: clamp(22px, 4vw, 34px);
+    border: 1px solid #38352f;
+    border-radius: 4px;
+    background:
+        radial-gradient(circle at top right, rgba(198, 169, 120, 0.06), transparent 45%),
+        #111110;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cabecalho-chat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #302e29;
+}
+
+.indicador-gato {
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c6a978;
+    box-shadow: 0 0 12px rgba(198, 169, 120, 0.3);
+}
+
+.cabecalho-chat h3 {
+    margin: 0;
+    color: #e8e4dc;
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+}
+
+.cabecalho-chat p {
+    margin: 3px 0 0;
+    color: #827d73;
+    font-size: 0.82rem;
+}
+
+#mensagens-gato {
+    min-height: 130px;
+    max-height: 360px;
+    margin: 22px 0;
+    padding: 20px;
+    gap: 18px;
+    overflow-y: auto;
+    background: #0b0b0b;
+    border: 1px solid #292724;
+    border-radius: 3px;
+}
+
+.mensagem {
+    max-width: 95%;
+    padding: 13px 16px;
+    border-left: 2px solid #777064;
+    background: #151513;
+}
+
+.mensagem p {
+    margin: 5px 0 0;
+    color: #d0ccc3;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+.autor-mensagem {
+    color: #c6a978;
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+}
+
+.mensagem-usuario {
+    align-self: flex-end;
+    border-left: 0;
+    border-right: 2px solid #777;
+    background: #1b1a18;
+    text-align: right;
+}
+
+.mensagem-usuario .autor-mensagem {
+    color: #aaa49b;
+}
+
+#formulario-gato {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+#mensagem-usuario {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+    border: 1px solid #454139;
+    border-radius: 3px;
+    background: #090909;
+    color: #eee9e1;
+    font: inherit;
+}
+
+#formulario-gato button {
+    flex: 0 0 52px;
+    min-height: 48px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #c6a978;
+    border-radius: 3px;
+    background: #c6a978;
+    color: #111;
+    font-size: 1.35rem;
+}
+
+#formulario-gato button:hover {
+    background: #dfc69c;
+    transform: none;
+}
+
+.aviso-chat {
+    margin: 13px 0 0;
+    color: #716c63;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #conversa-gato {
+        margin: 40px auto;
+        padding: 20px 15px;
+    }
+
+    #mensagens-gato {
+        padding: 13px;
+    }
+
+    .mensagem {
+        max-width: 100%;
+    }
+
+    #formulario-gato {
+        gap: 7px;
+    }
+
+    #formulario-gato button {
+        flex-basis: 48px;
+    }
+}
