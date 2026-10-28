@@ -661,3 +661,60 @@ window.responderGato = responderGato;
 
 mostrarNoticia();
 mostrarPensamento();
+// ===============================
+// CHAT COM IA
+// ===============================
+
+const formularioGato = document.getElementById("formulario-gato");
+const campoMensagemGato = document.getElementById("mensagem-usuario");
+const mensagensGato = document.getElementById("mensagens-gato");
+
+const URL_GATO = "COLE_AQUI_A_URL_DO_WORKER";
+
+if (formularioGato && campoMensagemGato && mensagensGato) {
+    formularioGato.addEventListener("submit", async (evento) => {
+        evento.preventDefault();
+
+        const mensagem = campoMensagemGato.value.trim();
+        if (!mensagem) return;
+
+        const usuario = document.createElement("div");
+        usuario.className = "mensagem mensagem-usuario";
+        usuario.innerHTML = '<span class="autor-mensagem">VOCÊ</span>';
+
+        const textoUsuario = document.createElement("p");
+        textoUsuario.textContent = mensagem;
+        usuario.appendChild(textoUsuario);
+        mensagensGato.appendChild(usuario);
+
+        campoMensagemGato.value = "";
+
+        const gatoResposta = document.createElement("div");
+        gatoResposta.className = "mensagem mensagem-gato";
+        gatoResposta.innerHTML = '<span class="autor-mensagem">O GATO</span>';
+
+        const textoGato = document.createElement("p");
+        textoGato.textContent = "Pensando. Que inconveniente.";
+        gatoResposta.appendChild(textoGato);
+        mensagensGato.appendChild(gatoResposta);
+
+        try {
+            const resposta = await fetch(URL_GATO, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ mensagem })
+            });
+
+            const dados = await resposta.json();
+
+            if (!resposta.ok) throw new Error(dados.erro || "Erro na API");
+
+            textoGato.textContent = dados.resposta;
+        } catch (erro) {
+            textoGato.textContent = "Não consegui responder. Aparentemente, até gatos dependem de tecnologia.";
+            console.error(erro);
+        }
+
+        mensagensGato.scrollTop = mensagensGato.scrollHeight;
+    });
+}
