@@ -52,7 +52,7 @@ app.post("/chat", async (req, res) => {
     }
 
     const resposta = await openai.responses.create({
-      model: "gpt-6",
+      model: "gpt-5.5",
       instructions: PERSONALIDADE_DO_GATO,
       input: mensagem.trim(),
       max_output_tokens: 250
