@@ -2158,3 +2158,219 @@ footer {
         width: 95px !important;
     }
 }
+
+/* =========================================
+   O GATO QUE DESCONFIA
+   IDENTIDADE: PODER, MISTÉRIO E CONTRADIÇÃO
+========================================= */
+
+:root {
+    --preto: #171717;
+    --pedra: #77736C;
+    --pedra-escura: #393735;
+    --ouro: #D8B96D;
+    --marfim: #F0E8D8;
+    --roxo: #A020F0;
+    --vermelho: #711C24;
+}
+
+/* FUNDO GERAL */
+
+body {
+    background: var(--preto);
+    color: var(--marfim);
+    background-image:
+        radial-gradient(#ffffff12 0.5px, transparent 0.5px);
+    background-size: 5px 5px;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: var(--preto);
+    color: var(--marfim);
+    border-bottom: 2px solid var(--ouro);
+}
+
+header h1 {
+    color: var(--ouro);
+    letter-spacing: -1.5px;
+}
+
+header nav a {
+    color: var(--marfim);
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--roxo);
+}
+
+/* SEÇÕES */
+
+main section {
+    background: var(--marfim);
+    color: var(--preto);
+    border: 1px solid var(--ouro);
+    box-shadow: 7px 7px 0 var(--pedra-escura);
+}
+
+main section h2 {
+    color: var(--vermelho);
+}
+
+/* PRIMEIRA TELA */
+
+#inicio {
+    background:
+        linear-gradient(145deg, #77736C, #393735 65%, #171717);
+    color: var(--marfim);
+    border: 2px solid var(--ouro);
+}
+
+#inicio::before,
+#inicio::after {
+    display: none;
+}
+
+#inicio h2 {
+    color: var(--ouro);
+}
+
+#inicio p {
+    background: rgba(23, 23, 23, 0.75);
+    color: var(--marfim);
+    border: 1px solid var(--ouro);
+}
+
+/* PENSAMENTOS */
+
+#pensamentos {
+    background: #D5CCBA;
+    color: var(--preto);
+}
+
+#pensamentos h2 {
+    color: var(--vermelho);
+}
+
+/* DESCONFIE */
+
+#desconfie {
+    background: var(--pedra-escura);
+    color: var(--marfim);
+    border-color: var(--ouro);
+}
+
+#desconfie h2 {
+    color: var(--ouro);
+}
+
+/* CADERNO */
+
+#caderno {
+    background: var(--pedra);
+    color: var(--marfim);
+}
+
+#caderno h2 {
+    color: var(--ouro);
+}
+
+.entrada-caderno {
+    background: var(--preto);
+    color: var(--marfim);
+    border: 1px solid var(--ouro);
+}
+
+.entrada-caderno h3 {
+    color: var(--ouro);
+}
+
+/* CONVERSA COM O GATO */
+
+#conversa-gato {
+    background: var(--preto);
+    color: var(--marfim);
+    border: 1px solid var(--ouro);
+    box-shadow: 5px 5px 0 var(--vermelho);
+}
+
+#conversa-gato h3 {
+    color: var(--ouro);
+}
+
+.mensagem-gato {
+    background: var(--pedra-escura);
+    color: var(--marfim);
+}
+
+.mensagem-usuario {
+    background: #51423B;
+    color: var(--marfim);
+}
+
+/* FINAL */
+
+#final {
+    background: #292726;
+    color: var(--marfim);
+    border: 2px solid var(--ouro);
+}
+
+#final h2,
+#final h3 {
+    color: var(--ouro);
+}
+
+/* BOTÕES */
+
+.botao,
+button,
+.botao-final {
+    background: var(--vermelho);
+    color: var(--marfim);
+    border: 1px solid var(--ouro);
+    box-shadow: 4px 4px 0 var(--preto);
+    transition: 0.25s;
+}
+
+.botao:hover,
+button:hover,
+.botao-final:hover {
+    background: var(--preto);
+    color: var(--ouro);
+    border-color: var(--ouro);
+}
+
+/* ROXO: APENAS ONDE DEVE CHAMAR ATENÇÃO */
+
+.pista-letra,
+.pista-espelho,
+.pista-cenario,
+.pista-cabeca-baixo {
+    color: var(--roxo);
+    font-weight: 900;
+}
+
+#area-secreta {
+    border-color: var(--roxo);
+}
+
+#area-secreta button:hover {
+    background: var(--roxo);
+    color: white;
+}
+
+::selection {
+    background: var(--roxo);
+    color: white;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: var(--preto);
+    color: var(--ouro);
+    border-top: 2px solid var(--ouro);
+}
