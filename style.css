@@ -2095,3 +2095,66 @@ footer {
     line-height: 1.7;
     text-shadow: none;
 }
+
+/* GATO FLUTUANTE — NOVA POSIÇÃO */
+
+#gato-interativo {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 20px !important;
+    left: auto !important;
+    top: auto !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    z-index: 99999;
+}
+
+/* BALÃO DE FALA */
+
+#fala-gato {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    width: 210px;
+    max-width: calc(100vw - 50px);
+    padding: 14px;
+    background: #211b19;
+    color: #fff0d3;
+    border: 2px solid #d77b32;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1.5;
+    box-shadow: 4px 4px 0 #a93629;
+}
+
+/* IMAGEM DO GATO */
+
+#gatinho {
+    width: 125px !important;
+    max-width: 35vw;
+    height: auto !important;
+    cursor: pointer;
+    display: block;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    #gato-interativo {
+        right: 12px !important;
+        bottom: 12px !important;
+    }
+
+    #gatinho {
+        width: 95px !important;
+    }
+}
