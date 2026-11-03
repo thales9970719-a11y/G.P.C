@@ -2062,3 +2062,24 @@ footer {
         flex-wrap: wrap;
     }
 }
+/* AJUSTES DA PRIMEIRA TELA */
+
+#inicio {
+    margin-top: 3rem;
+    padding-top: 5rem;
+    min-height: 530px;
+}
+
+#inicio h2 {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+#inicio p {
+    position: relative;
+    z-index: 2;
+    color: #49352b;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+}
