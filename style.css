@@ -1805,3 +1805,260 @@ header.caderno-abertura nav.indice-caderno a:hover {
         flex-basis: 48px;
     }
 }
+
+/* =====================================
+   O GATO QUE DESCONFIA
+   CARMO DO RIO CLARO ENCONTRA O SURREALISMO
+===================================== */
+
+:root {
+    --papel: #f1dfbd;
+    --papel-claro: #fff0d3;
+    --tinta: #211b19;
+    --vermelho: #a93629;
+    --laranja: #d77b32;
+    --amarelo: #e7b83f;
+    --verde: #536b48;
+    --azul: #385b70;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--papel);
+    color: var(--tinta);
+    font-family: Georgia, "Times New Roman", serif;
+    background-image:
+        radial-gradient(#9c7850 0.45px, transparent 0.45px);
+    background-size: 7px 7px;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: var(--vermelho);
+    color: var(--papel-claro);
+    border-bottom: 5px solid var(--amarelo);
+    padding: 1.5rem 5%;
+}
+
+header h1 {
+    color: var(--papel-claro);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -2px;
+}
+
+header nav a {
+    color: var(--papel-claro);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    color: var(--amarelo);
+    border-color: var(--amarelo);
+}
+
+/* SEÇÕES */
+
+main section {
+    position: relative;
+    overflow: hidden;
+    width: min(1050px, 90%);
+    margin: 4rem auto;
+    padding: clamp(2rem, 6vw, 4rem);
+    background: var(--papel-claro);
+    border: 2px solid var(--tinta);
+    box-shadow: 8px 8px 0 var(--tinta);
+}
+
+main section h2 {
+    color: var(--vermelho);
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+main section p {
+    line-height: 1.8;
+}
+
+/* PAISAGEM DE CARMO */
+
+#inicio {
+    min-height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        linear-gradient(
+            180deg,
+            #e99b54 0%,
+            #f4c875 43%,
+            #e6b75f 44%,
+            #6e8b72 100%
+        );
+    border: 3px solid var(--tinta);
+    isolation: isolate;
+}
+
+#inicio::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 47%;
+    background: var(--verde);
+    clip-path: polygon(
+        0 75%, 13% 52%, 25% 62%,
+        39% 25%, 51% 43%, 64% 50%,
+        78% 12%, 88% 35%, 100% 22%,
+        100% 100%, 0 100%
+    );
+}
+
+#inicio::after {
+    content: "⛪";
+    position: absolute;
+    z-index: 1;
+    right: 19%;
+    bottom: 36%;
+    font-size: 1.15rem;
+    filter: grayscale(1);
+}
+
+#inicio h2 {
+    max-width: 700px;
+    color: #762b23;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.05;
+}
+
+#inicio p {
+    max-width: 510px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* BOTÕES */
+
+.botao,
+button,
+.botao-final {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.85rem 1.4rem;
+    background: var(--vermelho);
+    color: white;
+    border: 2px solid var(--tinta);
+    box-shadow: 4px 4px 0 var(--tinta);
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover,
+button:hover,
+.botao-final:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--tinta);
+}
+
+/* PENSAMENTOS */
+
+#pensamentos {
+    background: #e9c65d;
+}
+
+#pensamentos h2 {
+    color: #31536a;
+}
+
+/* DESCONFIE */
+
+#desconfie {
+    background: #b84b37;
+    color: #fff0d3;
+}
+
+#desconfie h2 {
+    color: #ffdc8b;
+}
+
+/* CADERNO */
+
+#caderno {
+    background: #a9ae7c;
+}
+
+#caderno h2 {
+    color: #384d35;
+}
+
+.entrada-caderno {
+    display: block;
+    padding: 1.5rem;
+    background: var(--papel-claro);
+    color: var(--tinta);
+    border: 2px solid var(--tinta);
+    box-shadow: 5px 5px 0 var(--tinta);
+    text-decoration: none;
+}
+
+/* CHAT: CONTRASTE ESCURO */
+
+#conversa-gato {
+    background: #211e1b;
+    color: #f1dfbd;
+    border: 3px solid var(--laranja);
+    box-shadow: 6px 6px 0 #8c382d;
+}
+
+#conversa-gato h3 {
+    color: #f1c66d;
+}
+
+/* FINAL */
+
+#final {
+    background: #385b70;
+    color: #fff0d3;
+}
+
+#final h2,
+#final h3 {
+    color: #f1c66d;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 2rem;
+    background: var(--tinta);
+    color: var(--papel);
+    text-align: center;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    main section {
+        width: 88%;
+        margin: 2.5rem auto;
+        padding: 1.5rem;
+    }
+
+    #inicio {
+        min-height: 460px;
+    }
+
+    header nav {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+}
