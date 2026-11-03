@@ -2083,3 +2083,15 @@ footer {
     color: #49352b;
     text-shadow: 0 1px 0 rgba(255,255,255,0.25);
 }
+/* CONTRASTE DO TEXTO INICIAL */
+
+#inicio p {
+    color: #38251f;
+    background: rgba(255, 240, 211, 0.82);
+    padding: 1rem 1.4rem;
+    border: 1px solid #38251f;
+    max-width: 520px;
+    margin: 1.5rem auto;
+    line-height: 1.7;
+    text-shadow: none;
+}
